@@ -1,0 +1,2 @@
+I believe there may be some confusion as GNU9 does not correspond to a specific software or tool provided by the GNU project. However, I can provide information on either the GNU project in general or on a specific GNU software based on its correct name. For example, GCC (GNU Compiler Collection) or GNU Bash. Could you please provide more precise information or clarify what exactly you are referring to?
+--------------------------------------
