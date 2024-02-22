@@ -1,0 +1,24 @@
+{
+  "software_name": "7z",
+  "overview": "7z is an open-source file archiver with a high compression ratio. It utilises its own 7z archive format but can read and write several other archive formats as well.",
+  "core_features": [
+    "High compression ratio in 7z format with LZMA and LZMA2 compression",
+    "Supported packing / unpacking formats: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM",
+    "Supported unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z",
+    "Strong AES-256 encryption in 7z and ZIP formats",
+    "Self-extracting capability for 7z format",
+    "Integration with Windows Shell"
+  ],
+  "general_tags": ["File Compression", "File Archiving", "Open Source"],
+  "research_discipline": "Computer Science",
+  "research_area": "Data Management",
+  "software_class": "Utility Software",
+  "software_type": "Desktop Application",
+  "software_page": "https://www.7-zip.org/",
+  "documentation": "https://www.7-zip.org/doc.html",
+  "tutorials": [
+    "http://www.newtosoftware.com/7zip/tutorial/",
+    "https://www.youtube.com/watch?v=ZEHpF5-B5ho",
+    "https://learn.g2.com/how-to-use-7-zip"
+  ]
+}
