@@ -1,0 +1,27 @@
+{
+  "software_name": "7z",
+  "comprehensive_overview": "7-Zip is an open-source file archiver software for compressing files and extracting compressed files, supporting a wide range of formats.",
+  "core_features": [
+    "High compression ratio in 7z format with LZMA and LZMA2 compression",
+    "Encryption and password protection",
+    "Supports several formats for packing/unpacking including ZIP, TAR, XZ, GZIP, and more",
+    "Integration with Windows Shell"
+  ],
+  "general_tags": [
+    "Compression",
+    "Archiver",
+    "File management"
+  ],
+  "additional_tags": {
+    "research_discipline": "",
+    "research_area": "",
+    "software_class": "Utility",
+    "software_type": "Open-source"
+  },
+  "software_page_link": "https://www.7-zip.org/",
+  "documentation_link": "https://www.7-zip.org/download.html",
+  "training_tutorial_links": [
+    "https://www.7-zip.org/help.html",
+    "https://sourceforge.net/projects/sevenzip/"
+  ]
+}
