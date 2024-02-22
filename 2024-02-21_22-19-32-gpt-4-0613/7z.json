@@ -1,0 +1,39 @@
+{
+  "softwareName": "7z",
+  "overview": "7z is a file archiver with a high compression ratio. It can be used on any computer, including a computer in a commercial organization.",
+  "coreFeatures": [
+    {
+      "feature": "High compression ratio",
+      "description": "The 7z format provides a high compression ratio to reduce file sizes."
+    },
+    {
+      "feature": "Windows Shell Integration",
+      "description": "7z provides integration with the Windows shell making the software easy to use and convenient."
+    },
+    {
+      "feature": "Support for strong AES-256 encryption",
+      "description": "This ensures security when compressing and decompressing files."
+    },
+    {
+      "feature": "Ability to handle various formats",
+      "description": "7z supports a variety of compression and non-compression archive formats including 7z, ZIP, GZIP, BZIP2, TAR, and others."
+    }
+  ],
+  "tags": {
+    "researchDiscipline": "Computer Science",
+    "researchArea": "Data Compression",
+    "softwareClass": "File Archiver",
+    "softwareType": "Open-source"
+  },
+  "links": [
+    {
+      "softwarePage": "https://www.7-zip.org/",
+      "documentation": "https://www.7-zip.org/documentation.html",
+      "trainingAndTutorials": [
+        "https://www.youtube.com/watch?v=fwWQfmqg8fc",
+        "https://www.howtogeek.com/162698/how-to-use-7-zip-to-encrypt-files-and-folders/",
+        "https://www.online-tech-tips.com/computer-tips/how-to-use-7-zip-to-create-multiple-compressed-folders-in-one-go/"
+      ]
+    }
+  ]
+}
