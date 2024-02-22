@@ -1,0 +1,17 @@
+{
+ "Software List": [
+  {
+    "software name": "7z",
+    "overview": "7z is a file archiver with a high compression ratio, used for data compression and file packaging. It is open-source software, most of the source code is under the GNU LGPL license.",
+    "core features": ["High compression ratio", "Strong AES-256 encryption", "Ability to handle large file sizes", "Self-extraction capability", "Supports multiple languages", "Integration with Windows Shell"],
+    "tags": {"research discipline": "Computer Science", "research area": "Data Management", "software class": "Utility Tool", "software type": "File Archiver"},
+    "software page": "https://www.7-zip.org/",
+    "Links": {
+      "Documentation": "https://www.7-zip.org/faq.html",
+      "Training and Tutorial": [
+        "https://www.howtogeek.com/136075/how-to-extract-files-from-7-zip/",
+        "https://www.lifewire.com/how-to-use-7-zip-4577374"
+      ]}
+  }
+]
+}
