@@ -1,0 +1,9 @@
+{
+    "Software": "Basemap",
+    "Website": "https://matplotlib.org/basemap/",
+    "Documentation": "https://matplotlib.org/basemap/users/index.html",
+    "Tutorial_and_Training": [
+        "https://basemaptutorial.readthedocs.io/en/latest/",
+        "https://jakevdp.github.io/PythonDataScienceHandbook/04.13-geographic-data-with-basemap.html"
+    ]
+}

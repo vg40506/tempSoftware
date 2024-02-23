@@ -1,0 +1,10 @@
+{
+    "Software": "AWS",
+    "Website": "https://aws.amazon.com/",
+    "Documentation": "https://docs.aws.amazon.com/",
+    "Tutorial_and_Training": [
+        "https://aws.amazon.com/training/",
+        "https://aws.amazon.com/getting-started/hands-on/",
+        "https://www.freecodecamp.org/news/tag/aws/"
+    ]
+}

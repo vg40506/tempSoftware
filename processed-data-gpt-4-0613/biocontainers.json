@@ -1,0 +1,10 @@
+{
+    "Software": "Biocontainers",
+    "Website": "https://biocontainers.pro/",
+    "Documentation": "https://biocontainers.pro/docs/101/",
+    "Tutorial_and_Training": [
+        "https://biocontainers.pro/docs/101/introduction/",
+        "https://galaxyproject.github.io/training-material/topics/containers/",
+        "https://www.youtube.com/watch?v=FvIMWsPiL4o"
+    ]
+}

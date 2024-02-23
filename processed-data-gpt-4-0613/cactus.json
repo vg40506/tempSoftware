@@ -1,0 +1,9 @@
+{
+    "Software": "Cactus",
+    "Website": "https://github.com/ComparativeGenomicsToolkit/cactus",
+    "Documentation": "https://github.com/ComparativeGenomicsToolkit/cactus",
+    "Tutorial_and_Training": [
+        "https://github.com/ComparativeGenomicsToolkit/cactus#usage",
+        "https://github.com/ComparativeGenomicsToolkit/cactus/blob/master/examples/evolverMammals.txt"
+    ]
+}

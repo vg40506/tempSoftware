@@ -1,0 +1,9 @@
+{
+    "Software": "Bio++",
+    "Website": "http://www.biopp.org/",
+    "Documentation": "http://www.biopp.org/doxygen/index.html",
+    "Tutorial_and_Training": [
+        "http://www.biopp.org/docs/tutorial-bppsuite-bac2017/",
+        "http://www.biopp.org/docs/wikipp-current/BppGuide/"
+    ]
+}

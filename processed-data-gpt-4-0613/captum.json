@@ -1,0 +1,10 @@
+{
+    "Software": "Captum",
+    "Website": "https://captum.ai/",
+    "Documentation": "https://captum.ai/api/",
+    "Tutorial_and_Training": [
+        "https://captum.ai/tutorials/",
+        "https://pytorch.org/tutorials/intermediate/captum_insights.html",
+        "https://github.com/pytorch/captum/blob/main/tutorials/Resnet_TorchVision_Interpret.ipynb"
+    ]
+}

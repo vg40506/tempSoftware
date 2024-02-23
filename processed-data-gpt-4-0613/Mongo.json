@@ -1,0 +1,13 @@
+{
+    "name": "MongoDB",
+    "software_page": "https://www.mongodb.com/",
+    "documentation": "https://docs.mongodb.com/manual/",
+    "tutorials": [
+        "https://www.mongodb.com/basics",
+        "https://www.w3schools.com/nodejs/nodejs_mongodb.asp"
+    ],
+    "additional_resources": [
+        "https://university.mongodb.com/",
+        "https://www.mongodb.com/community/forums/"
+    ]
+}

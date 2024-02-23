@@ -1,0 +1,13 @@
+{
+    "name": "Mesa",
+    "software_page": "https://www.mesa3d.org/",
+    "documentation": "https://docs.mesa3d.org/",
+    "tutorials": [
+        "http://www.songho.ca/opengl/gl_mesa3d.html",
+        "https://www.tutorialspoint.com/computer_graphics/computer_graphics_mesa.htm"
+    ],
+    "additional_resources": [
+        "https://en.wikipedia.org/wiki/Mesa_(computer_graphics)",
+        "https://github.com/mesa3d/mesa"
+    ]
+}
