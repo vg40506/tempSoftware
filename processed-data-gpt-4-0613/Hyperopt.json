@@ -1,13 +1,18 @@
+
 {
-  "Software": {
-    "Hyperopt": {
-      "MainPage": "http://hyperopt.github.io/hyperopt/",
-      "Documentation": "https://hyperopt.github.io/hyperopt/getting-started/",
-      "Tutorials": [
-        "https://towardsdatascience.com/an-introductory-example-of-bayesian-optimization-in-python-with-hyperopt-aae40fff4ff0",
-        "https://www.mikulskibartosz.name/hyperopt-the-best-parametrization-of-the-model/",
-        "https://medium.com/district-data-labs/parameter-tuning-with-hyperopt-faa86acdfdce"
-      ]
-    }
+  "Hyperopt": {
+    "software_page": "http://hyperopt.github.io/hyperopt/",
+    "documentation": "https://hyperopt.github.io/hyperopt/",
+    "training_materials": [
+      {
+        "title": "Hyperopt: Optimizing Hyperparams with Python",
+        "url": "https://www.datacamp.com/community/tutorials/hyperparameter-optimization-with-hyperopt"
+      },
+      {
+        "title": "Python Machine Learning Optimization with HyperOpt",
+        "url": "https://stackabuse.com/python-machine-learning-optimization-with-hyperopt/"
+      }
+    ]
   }
 }
+

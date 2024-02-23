@@ -1,13 +1,22 @@
+
 {
-    "name": "Mesa",
+  "Mesa": {
     "software_page": "https://www.mesa3d.org/",
     "documentation": "https://docs.mesa3d.org/",
-    "tutorials": [
-        "http://www.songho.ca/opengl/gl_mesa3d.html",
-        "https://www.tutorialspoint.com/computer_graphics/computer_graphics_mesa.htm"
-    ],
-    "additional_resources": [
-        "https://en.wikipedia.org/wiki/Mesa_(computer_graphics)",
-        "https://github.com/mesa3d/mesa"
+    "training_materials": [
+      {
+        "title": "Introduction to Computer Graphics",
+        "url": "https://www.youtube.com/watch?v=k_S5fnKjO-4"
+      },
+      {
+        "title": "Development Guide - Mesa 3D",
+        "url": "https://docs.mesa3d.org/dev-guide/index.html"
+      },
+      {
+        "title": "Retro Gaming with Raspberry Pi",
+        "url": "https://magpi.raspberrypi.org/books/retro-gaming/pdf_download"
+      }
     ]
+  }
 }
+

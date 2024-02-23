@@ -1,10 +1,18 @@
+
 {
-    "Software": "Biocontainers",
-    "Website": "https://biocontainers.pro/",
-    "Documentation": "https://biocontainers.pro/docs/101/",
-    "Tutorial_and_Training": [
-        "https://biocontainers.pro/docs/101/introduction/",
-        "https://galaxyproject.github.io/training-material/topics/containers/",
-        "https://www.youtube.com/watch?v=FvIMWsPiL4o"
+  "Biocontainers": {
+    "software_page": "https://biocontainers.pro/",
+    "documentation": "https://biocontainers.pro/docs/101/",
+    "training_materials": [
+      {
+        "title": "BioContainers: an open-source and community-driven framework for software standardization",
+        "url": "https://academic.oup.com/bioinformatics/article/33/16/2580/3742895"
+      },
+      {
+        "title": "Introduction to BioContainers",
+        "url": "https://www.youtube.com/watch?v=yw5FA7lWbQE"
+      }
     ]
+  }
 }
+

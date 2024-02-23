@@ -1,9 +1,18 @@
+
 {
-    "Software": "Cactus",
-    "Website": "https://github.com/ComparativeGenomicsToolkit/cactus",
-    "Documentation": "https://github.com/ComparativeGenomicsToolkit/cactus",
-    "Tutorial_and_Training": [
-        "https://github.com/ComparativeGenomicsToolkit/cactus#usage",
-        "https://github.com/ComparativeGenomicsToolkit/cactus/blob/master/examples/evolverMammals.txt"
+  "Cactus": {
+    "software_page": "https://cactuscode.org/",
+    "documentation": "https://cactuscode.org/documentation/",
+    "training_materials": [
+      {
+        "title": "Introduction to using Cactus",
+        "url": "https://www.youtube.com/watch?v=FxHoemkIb-U"
+      },
+      {
+        "title": "Cactus Code Wiki",
+        "url": "https://docs.einsteintoolkit.org/et-docs/Main_Page"
+      }
     ]
+  }
 }
+

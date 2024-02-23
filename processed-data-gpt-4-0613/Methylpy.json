@@ -1,12 +1,14 @@
+
 {
-    "name": "Methylpy",
+  "Methylpy": {
     "software_page": "https://github.com/yupenghe/methylpy",
-    "documentation": "https://methylpy.readthedocs.io/en/latest/",
-    "tutorials": [
-        "https://methylpy.readthedocs.io/en/latest/package_description.html",
-        "https://methylpy.readthedocs.io/en/latest/package_usage.html"
-    ],
-    "additional_resources": [
-        "https://pubmed.ncbi.nlm.nih.gov/28191891/"
+    "documentation": "https://methylpy.readthedocs.io/",
+    "training_materials": [
+      {
+        "title": "Bioinformatics for DNA methylation: A Python based tutorial",
+        "url": "https://genomicsclass.github.io/book/pages/bioinformatics_for_DNA_methylation.html"
+      }
     ]
+  }
 }
+

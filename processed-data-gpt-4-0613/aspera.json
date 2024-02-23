@@ -1,19 +1,17 @@
+
 {
-"name": "Aspera",
-"softwarePage": "https://www.ibm.com/products/aspera",
-"documentation": "https://www.ibm.com/docs/en/aspera-desktop-client/3.9.9",
-"tutorialMaterials": [
-    {
-        "name": "Aspera - Getting Started",
-        "url": "https://www.ibm.com/docs/en/aspera/desktop-client/3.9.9?topic=concepts-getting-started"
-    },
-    {
-        "name": "How to Use Aspera for Large Transfers",
-        "url": "https://collaborate.illinois.edu/display/mfsde/How+to+Use+Aspera+for+Large+Transfers"
-    },
-    {
-        "name": "Creating a New Transfer Using Aspera CLI",
-        "url": "https://www.ibm.com/docs/en/file-storage/quarterly/creating-new-transfer-using-aspera-cli"
-    }
-  ]
+  "Aspera": {
+    "software_page": "https://www.ibm.com/products/aspera",
+    "documentation": "https://www.ibm.com/support/knowledgecenter/SSBS6K/aspera/welcome.html",
+    "training_materials": [
+      {
+        "title": "IBM Aspera on Cloud Training",
+        "url": "https://www.globalknowledge.com/us-en/course/181922/ibm-aspera-on-cloud/"
+      },
+      {
+        "title": "IBM Aspera High-Speed Transfer Server (v3.9.6) Administration",
+        "url": "https://www.exitcertified.com/training/ibm/aspera/ibm-aspera-high-speed-transfer-server-v3-9-6-administration-60423-detail.html"
+      }
+    ]
+  }
 }

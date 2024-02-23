@@ -1,19 +1,18 @@
+
 {
-"name": "ATLAS",
-"softwarePage": "http://math-atlas.sourceforge.net/",
-"documentation": "http://math-atlas.sourceforge.net/atlas_install/index.html",
-"tutorialMaterials": [
-    {
-        "name": "Installing ATLAS",
-        "url": "http://math-atlas.sourceforge.net/atlas_install/"
-    },
-    {
-        "name": "ATLAS (Automatically Tuned Linear Algebra Software) compilation guide",
-        "url": "https://www.ibm.com/support/knowledgecenter/en/ssw_aix_72/com.ibm.aix.performancetools/install_atlas_compilation.htm"
-    },
-    {
-        "name": "ATLAS Installation Guide",
-        "url": "https://www.youtube.com/watch?v=VWw9LLB0byQ"
-    }
-  ]
+  "ATLAS": {
+    "software_page": "http://math-atlas.sourceforge.net/",
+    "documentation": "http://math-atlas.sourceforge.net/atlas_install/index.html",
+    "training_materials": [
+      {
+        "title": "Building and Using the ATLAS Library and Its Python Bindings",
+        "url": "https://www.acs.org/content/acs/en/education/educators/cwfg/compilations/python/building-and-using-the-atlas-library-and-its-python-bindings.html"
+      },
+      {
+        "title": "ATLAS Installation",
+        "url": "https://math-atlas.sourceforge.io/atlas_install/index.html"
+      }
+    ]
+  }
 }
+

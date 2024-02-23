@@ -1,13 +1,18 @@
+
 {
-  "Software": {
-    "Greenlet": {
-      "MainPage": "https://greenlet.readthedocs.io/en/latest/",
-      "Documentation": "https://greenlet.readthedocs.io/en/latest/",
-      "Tutorials": [
-        "https://www.gevent.org/intro.html",
-        "https://www.youtube.com/watch?v=uOzF1y_OAW8",
-        "https://sdiehl.github.io/gevent-tutorial/"
-      ]
-    }
+  "Greenlet": {
+    "software_page": "https://greenlet.readthedocs.io/en/latest/",
+    "documentation": "https://greenlet.readthedocs.io/en/latest/",
+    "training_materials": [
+      {
+        "title": "Python Concurrency with Greenlets",
+        "url": "https://www.gevent.org/intro.html"
+      },
+      {
+        "title": "Greenlet-based concurrent programming",
+        "url": "https://greenlet.readthedocs.io/en/latest/tutorial.html"
+      }
+    ]
   }
 }
+

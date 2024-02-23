@@ -1,15 +1,18 @@
+
 {
-"name": "ASPECT",
-"softwarePage": "https://aspect.geodynamics.org/",
-"documentation": "https://aspect.geodynamics.org/doc/manual/manual.pdf",
-"tutorialMaterials": [
-    {
-        "name": "ASPECT Tutorials",
-        "url": "https://aspect.geodynamics.org/doc/manual/tutorials/index.html"
-    },
-    {
-        "name": "ASPECT: Advanced Solver for Problems in Earth's ConvecTion, User Manual",
-        "url": "https://aspect.geodynamics.org/doc/manual/manual.pdf"
-    }
-  ]
+  "ASPECT": {
+    "software_page": "https://aspect.geodynamics.org/",
+    "documentation": "https://geodynamics.org/cig/software/aspect/",
+    "training_materials": [
+      {
+        "title": "High-Performance Modeling of Lithospheric Deformation - Hackathon through University of California, Davis",
+        "url": "https://hpc4geo.ucdavis.edu/workshops/workshop_2019/"
+      },
+      {
+        "title": "ASPECT hackathon at the Colorado School of Mines",
+        "url": "https://geodynamics.org/cig/events/calendar/2016-csm-aspect-hackathon/"
+      }
+    ]
+  }
 }
+

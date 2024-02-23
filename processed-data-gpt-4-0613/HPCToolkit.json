@@ -1,13 +1,18 @@
+
 {
-  "Software": {
-    "HPCToolkit": {
-      "MainPage": "https://hpctoolkit.org/",
-      "Documentation": "https://hpctoolkit.org/manual/HPCToolkit-users-manual.pdf",
-      "Tutorials": [
-        "https://hpctoolkit.org/tutorials.html",
-        "https://www.tacc.utexas.edu/documents/launch/504029.71.13.pdf",
-        "https://www.youtube.com/watch?v=05GPeLDfqE8"
-      ]
-    }
+  "HPCToolkit": {
+    "software_page": "http://hpctoolkit.org/",
+    "documentation": "http://hpctoolkit.org/documentation.html",
+    "training_materials": [
+      {
+        "title": "HPCToolkit User Manual",
+        "url": "http://hpctoolkit.org/manual/HPCToolkit-users-manual.pdf"
+      },
+      {
+        "title": "HPCToolkit: Tools for Performance Analysis of Parallel Programs",
+        "url": "https://www.youtube.com/watch?v=D8X4JMiKUAw"
+      }
+    ]
   }
 }
+
