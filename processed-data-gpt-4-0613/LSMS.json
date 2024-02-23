@@ -1,0 +1,14 @@
+
+{
+    "name": "LSMS",
+    "software_page": "https://www.lsms.org/",
+    "documentation": "http://inac.cea.fr/L_Sim/LSMS/lsms-doc.php",
+    "tutorials": [
+        "http://inac.cea.fr/L_Sim/LSMS/tutorial_model.php",
+        "http://www.lsms.net/training/index.php"
+    ],
+    "additional_resources": [
+        "https://link.springer.com/chapter/10.1007/978-3-642-38750-0_26",
+        "http://www.lsms.org.uk/LSMSworkshop.htm"
+    ]
+}
