@@ -1,13 +1,11 @@
+
 {
-    "name": "Mpi4py",
-    "software_page": "https://mpi4py.readthedocs.io/",
-    "documentation": "https://mpi4py.readthedocs.io/en/stable/",
-    "tutorials": [
-        "https://pythonprogramming.net/mpi4py-mpi-message-passing-interface-python-intermediate-tutorial/",
-        "https://mpi4py.readthedocs.io/en/stable/tutorial.html"
-    ],
-    "additional_resources": [
-        "https://github.com/mpi4py/mpi4py",
-        "https://stackoverflow.com/questions/tagged/mpi4py"
+  "mpi4py": {
+    "Software Page": "https://mpi4py.readthedocs.io/en/latest/index.html",
+    "Documentation": "https://mpi4py.readthedocs.io/en/latest/",
+    "Tutorial": [
+      "https://mpi4py.readthedocs.io/en/latest/tutorial.html"
     ]
+  }
 }
+

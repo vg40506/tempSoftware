@@ -1,12 +1,12 @@
+
 {
-    "name": "MELT",
-    "software_page": "https://gcc-melt.org/",
-    "documentation": "https://gcc-melt.org/melt-doc.html",
-    "tutorials": [
-        "https://gcc-melt.org/tutorial-advanced.html"
-    ],
-    "additional_resources": [
-        "https://en.wikipedia.org/wiki/GNU_Compiler_Collection",
-        "https://gcc.gnu.org/wiki/MELT"
+  "MELT": {
+    "Software Page": "https://www.mltframework.org/",
+    "Documentation": "https://www.mltframework.org/docs/",
+    "Tutorials": [
+      "https://www.mltframework.org/docs/tutorial1",
+      "https://www.mltframework.org/docs/tutorial2"
     ]
+  }
 }
+
