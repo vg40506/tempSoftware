@@ -1,0 +1,13 @@
+{
+  "Software": {
+    "Greenlet": {
+      "MainPage": "https://greenlet.readthedocs.io/en/latest/",
+      "Documentation": "https://greenlet.readthedocs.io/en/latest/",
+      "Tutorials": [
+        "https://www.gevent.org/intro.html",
+        "https://www.youtube.com/watch?v=uOzF1y_OAW8",
+        "https://sdiehl.github.io/gevent-tutorial/"
+      ]
+    }
+  }
+}

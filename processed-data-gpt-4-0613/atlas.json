@@ -1,0 +1,19 @@
+{
+"name": "ATLAS",
+"softwarePage": "http://math-atlas.sourceforge.net/",
+"documentation": "http://math-atlas.sourceforge.net/atlas_install/index.html",
+"tutorialMaterials": [
+    {
+        "name": "Installing ATLAS",
+        "url": "http://math-atlas.sourceforge.net/atlas_install/"
+    },
+    {
+        "name": "ATLAS (Automatically Tuned Linear Algebra Software) compilation guide",
+        "url": "https://www.ibm.com/support/knowledgecenter/en/ssw_aix_72/com.ibm.aix.performancetools/install_atlas_compilation.htm"
+    },
+    {
+        "name": "ATLAS Installation Guide",
+        "url": "https://www.youtube.com/watch?v=VWw9LLB0byQ"
+    }
+  ]
+}

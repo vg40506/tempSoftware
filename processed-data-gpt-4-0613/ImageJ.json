@@ -1,0 +1,13 @@
+{
+  "Software": {
+    "ImageJ": {
+      "MainPage": "https://imagej.nih.gov/ij/",
+      "Documentation": "https://imagej.nih.gov/ij/docs/index.html",
+      "Tutorials": [
+        "https://imagej.net/Category:Tutorials",
+        "https://www.youtube.com/watch?v=aErr2YAXX0o",
+        "https://learn.lammps.org/softwares/imagej/"
+      ]
+    }
+  }
+}

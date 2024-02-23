@@ -1,0 +1,13 @@
+{
+  "Software": {
+    "GST": {
+      "MainPage": "https://gstreamer.freedesktop.org/",
+      "Documentation": "https://gstreamer.freedesktop.org/documentation/",
+      "Tutorials": [
+        "https://gstreamer.freedesktop.org/documentation/tutorials/basic/index.html",
+        "https://www.youtube.com/watch?v=1unm4GzWI60",
+        "https://wiki.gnome.org/Projects/GStreamer/Tutorials"
+      ]
+    }
+  }
+}

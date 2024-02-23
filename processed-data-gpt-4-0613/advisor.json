@@ -1,0 +1,19 @@
+{
+"name": "Intel Advisor",
+"softwarePage": "https://software.intel.com/content/www/us/en/develop/tools/oneapi/base-toolkit/download.html?operatingsystem=window&distributions=webdownload&options=install&ja=pan&dgseg=idd",
+"documentation": "https://software.intel.com/content/www/us/en/develop/tools/advisor.html",
+"tutorialMaterials": [
+    {
+        "name": "Getting Started with Intel Advisor",
+        "url": "https://software.intel.com/content/www/us/en/develop/tools/advisor/tutorial-fortran-windows.html"
+    },
+    {
+        "name": "Intel Advisor User Guide",
+        "url": "https://software.intel.com/content/www/us/en/develop/documentation/advisor-user-guide/top.html"
+    },
+    {
+        "name": "Discovering Hotspots with Intel Advisor",
+        "url": "https://www.intel.com/content/www/us/en/develop/articles/intel-advisor-floating-point.html"
+    }
+  ]
+}

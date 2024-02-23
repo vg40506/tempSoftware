@@ -1,0 +1,19 @@
+{
+"name": "AMD Optimizing C/C++ Compiler (AOCC)",
+"softwarePage": "https://developer.amd.com/amd-aocc/",
+"documentation": "https://developer.amd.com/amd-aocc/aocc-installation-guide-and-resources/",
+"tutorialMaterials": [
+    {
+        "name": "How to use AOCC",
+        "url": "https://developer.amd.com/wp-content/resources/AOCC_Usage_Guide.pdf"
+    },
+    {
+        "name": "Getting started with AOCC",
+        "url": "https://www.youtube.com/watch?v=JR6-CRZJ3Lk"
+    },
+    {
+        "name": "AOCC for developers",
+        "url": "https://aws.amazon.com/blogs/industries/optimizing-and-compiling-for-amd-epyc-with-modern-compilers-aocc/"
+    }
+  ]
+}

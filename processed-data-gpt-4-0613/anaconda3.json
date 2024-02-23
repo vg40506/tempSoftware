@@ -1,0 +1,23 @@
+{
+"name": "Anaconda3",
+"softwarePage": "https://www.anaconda.com/products/distribution",
+"documentation": "https://docs.anaconda.com/anaconda/",
+"tutorialMaterials": [
+    {
+        "name": "Getting started with Anaconda",
+        "url": "https://docs.anaconda.com/anaconda/user-guide/getting-started/"
+    },
+    {
+        "name": "Getting Started with Python in Anaconda",
+        "url": "https://www.datacamp.com/community/tutorials/installing-anaconda-mac-os-x"
+    },
+    {
+        "name": "Anaconda Tutorial: Install",
+        "url": "https://www.tutorialspoint.com/anaconda/anaconda_install.htm"
+    },
+    {
+        "name": "Introduction to Python and Anaconda",
+        "url": "https://medium.com/edureka/python-anaconda-tutorial-172bb2b048f2"
+    }
+  ]
+}

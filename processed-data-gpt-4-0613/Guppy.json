@@ -1,0 +1,13 @@
+{
+  "Software": {
+    "Guppy": {
+      "MainPage": "https://nanoporetech.com/research/guppy",
+      "Documentation": "https://community.nanoporetech.com/downloads",
+      "Tutorials": [
+        "https://nanoporetech.com/community",
+        "https://www.youtube.com/watch?v=hhgUfG7thgM",
+        "https://nanoporetech.com/resource-centre/video/introducing-guppy"
+      ]
+    }
+  }
+}

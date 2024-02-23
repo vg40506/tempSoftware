@@ -1,0 +1,13 @@
+{
+  "Software": {
+    "Homer": {
+      "MainPage": "http://homer.ucsd.edu/homer/index.html",
+      "Documentation": "http://homer.ucsd.edu/homer/introduction/basics.html",
+      "Tutorials": [
+        "http://homer.ucsd.edu/homer/chipseq/",
+        "https://informatics.fas.harvard.edu/analysis-of-chip-seq-data.html",
+        "https://www.coursera.org/lecture/modern-genomic-data-science/chip-seq-q3cpZ"
+      ]
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "Software": {
+    "HDF5": {
+      "MainPage": "https://www.hdfgroup.org/solutions/hdf5/",
+      "Documentation": "https://portal.hdfgroup.org/display/HDF5/HDF5",
+      "Tutorials": [
+        "https://portal.hdfgroup.org/display/HDF5/Using+HDF5",
+        "https://www.youtube.com/watch?v=AS67HJCrbYQ",
+        "https://software.ecmwf.int/wiki/display/ECC/hdf5+Home"
+      ]
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "Software": {
+    "Hyperopt": {
+      "MainPage": "http://hyperopt.github.io/hyperopt/",
+      "Documentation": "https://hyperopt.github.io/hyperopt/getting-started/",
+      "Tutorials": [
+        "https://towardsdatascience.com/an-introductory-example-of-bayesian-optimization-in-python-with-hyperopt-aae40fff4ff0",
+        "https://www.mikulskibartosz.name/hyperopt-the-best-parametrization-of-the-model/",
+        "https://medium.com/district-data-labs/parameter-tuning-with-hyperopt-faa86acdfdce"
+      ]
+    }
+  }
+}

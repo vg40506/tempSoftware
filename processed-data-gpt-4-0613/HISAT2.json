@@ -1,0 +1,13 @@
+{
+  "Software": {
+    "HISAT2": {
+      "MainPage": "https://daehwankimlab.github.io/hisat2/",
+      "Documentation": "https://ccb.jhu.edu/software/hisat2/manual.shtml",
+      "Tutorials": [
+        "https://bioinformatics.uconn.edu/resources-and-events/tutorials-2/hisat2-tutorial/",
+        "https://www.youtube.com/watch?v=bkYGDpV7lhg",
+        "https://hbctraining.github.io/Intro-to-rnaseq-hpc-salmon/lessons/02b_alignment_using_hisat2_and_htseq.html"
+      ]
+    }
+  }
+}

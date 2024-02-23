@@ -1,0 +1,15 @@
+{
+"name": "ASPECT",
+"softwarePage": "https://aspect.geodynamics.org/",
+"documentation": "https://aspect.geodynamics.org/doc/manual/manual.pdf",
+"tutorialMaterials": [
+    {
+        "name": "ASPECT Tutorials",
+        "url": "https://aspect.geodynamics.org/doc/manual/tutorials/index.html"
+    },
+    {
+        "name": "ASPECT: Advanced Solver for Problems in Earth's ConvecTion, User Manual",
+        "url": "https://aspect.geodynamics.org/doc/manual/manual.pdf"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "Software": {
+    "HPCC": {
+      "MainPage": "https://hpccsystems.com/",
+      "Documentation": "https://hpccsystems.com/training/documentation",
+      "Tutorials": [
+        "https://hpccsystems.com/training/documentation/tutorials",
+        "https://learn.lexisnexis.com/hpcc",
+        "https://www.youtube.com/watch?v=Bch5B23_pu0"
+      ]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+"name": "archspec",
+"softwarePage": "https://github.com/archspec/archspec",
+"documentation": "https://archspec.readthedocs.io/en/latest/",
+"tutorialMaterials": [
+    {
+        "name": "archspec primer: How to leverage it",
+        "url": "https://www.hpcwire.com/solution_content/spack/archspec-primer-how-to-leverage-it/"
+    },
+    {
+        "name": "Getting Started with archspec",
+        "url": "https://www.youtube.com/watch?v=U2oiDYhWGmk"
+    }
+  ]
+}

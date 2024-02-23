@@ -1,0 +1,13 @@
+{
+  "Software": {
+    "Horovod": {
+      "MainPage": "https://horovod.ai/",
+      "Documentation": "https://horovod.readthedocs.io/en/latest/",
+      "Tutorials": [
+        "https://github.com/horovod/horovod/blob/master/docs/tensor-fusion.rst",
+        "https://www.youtube.com/watch?v=3UvA2xv36D0",
+        "https://cloud.google.com/ai-platform/deep-learning-vm/docs/multiple-gpus"
+      ]
+    }
+  }
+}

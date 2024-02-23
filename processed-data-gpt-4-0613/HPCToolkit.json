@@ -1,0 +1,13 @@
+{
+  "Software": {
+    "HPCToolkit": {
+      "MainPage": "https://hpctoolkit.org/",
+      "Documentation": "https://hpctoolkit.org/manual/HPCToolkit-users-manual.pdf",
+      "Tutorials": [
+        "https://hpctoolkit.org/tutorials.html",
+        "https://www.tacc.utexas.edu/documents/launch/504029.71.13.pdf",
+        "https://www.youtube.com/watch?v=05GPeLDfqE8"
+      ]
+    }
+  }
+}
