@@ -1,17 +1,16 @@
-Use Case: Text editing, code development; 
-
+Use Case: Text editing, code development 
 Code details and examples: 
-- To open a file in Emacs:  
-```
-emacs filename
-```
+```elisp
+; Sample input file (sample.txt)
+Hello, this is a sample file for Emacs.
 
-- To save the file in Emacs:  
-```
-Ctrl + x, Ctrl + s
-```
+; Opening a file in Emacs
+emacs sample.txt
 
-- To close Emacs:  
-```
-Ctrl + x, Ctrl + c
+; Saving and closing a file in Emacs
+Ctrl + x, Ctrl + s (save) 
+Ctrl + x, Ctrl + c (close)
+
+; Running a script in Emacs
+M-x (Alt + x)
 ```

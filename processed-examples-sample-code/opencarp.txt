@@ -1,17 +1,13 @@
-Use Case: OpenCARP is an open-source electrophysiological simulation software for cardiac electrophysiology research.
+Use Case: Finite element library for simulating electromagnetic fields in accelerator physics and engineering applications.
 
-Code details and examples:
-1. Generating mesh using gmsh:
-```bash
-gmsh -2 domain.geo
-```
+Code details and examples: 
+```cpp
+// Example input file for OpenCARP
+mesh_file = mesh_file.msh
+material_file = material_file.mat
+stimulus_file = stimulus_file.stim
+solver_params = solver_params.cfg
 
-2. Running OpenCARP simulation:
-```bash
-opencarp input_file.ini
-```
-
-3. Viewing results using Meshalyzer:
-```bash
-Meshalyzer output.vtp
+// Code snippet to run OpenCARP
+opencarp -i input_file.cfg
 ```

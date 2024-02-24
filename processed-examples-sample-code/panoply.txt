@@ -1,10 +1,11 @@
-Use Case: Panoply is a software application for visualizing and analyzing gridded and non-gridded scientific datasets. It supports a wide range of file formats and provides various visualization options.
+Use Case: Visualizing netCDF files  
+Code details and examples:  
+```python
+import panoply
 
-Code details and examples:
-1. Download Panoply from the official website.
-2. Open Panoply and import a dataset (e.g., netCDF file).
-3. Explore the available variables and dimensions in the dataset.
-4. Generate visualizations such as 2D plots, animations, contours, etc.
-5. Export the visualizations in different formats.
-
-Command to run: Double-click on the Panoply executable file to launch the application.
+# Sample input file: Example.nc (netCDF file)
+# Format required: netCDF
+# Specifications: Contains scientific data in netCDF format
+# Code snippet:
+panoply.netcdf_plot('Example.nc')
+```  

@@ -1,33 +1,21 @@
-Use Case: Electronic structure calculations with SIESTA
+Siesta is a DFT (Density Functional Theory) code used for electronic structure calculations. 
+
+Use Case: Electronic structure calculation
 Code details and examples:
-SIESTA (Spanish Initiative for Electronic Simulations with Thousands of Atoms) is a software package for performing electronic structure calculations based on Density Functional Theory (DFT). Below is an example input file for running a SIESTA calculation:
-
-Sample input file (input.fdf):
+Input file (example input.fdf):
 ```
-SystemName       Sample Si crystal
-NumberOfAtoms    2
-
-%block ChemicalSpeciesLabel
-  14  Si
-  14  Si
-%endblock ChemicalSpeciesLabel
-
-%block AtomicCoordinatesAndAtomicSpecies
-  0.0  0.0  0.0  1
-  1.34 1.34 1.34 1
-%endblock AtomicCoordinatesAndAtomicSpecies
-
-%block kgrid
-  6 6 6
-%endblock kgrid
+SystemName   Siesta example
+NumberOfSpecies  1
+NumberOfAtoms  2
+BeginAtoms
+1  0.00  0.00  0.00
+2  1.54  1.54  1.54
+EndAtoms
 ```
 
-To run SIESTA, you would typically create an input file like the one above and then run the siesta executable with this input file. The command to run SIESTA may vary depending on your system setup, but a simple command to run SIESTA with the input file above could be:
-
+Command to run:
 ```
-siesta < input.fdf > output
+siesta < input.fdf > output.out
 ```
 
-This command will run SIESTA with the specified input file and write the output to a file named "output".
-
-Please note that SIESTA is a complex software package with many options and parameters, so make sure to refer to the official documentation for more advanced usage.
+This command will run Siesta with the parameters specified in the input file input.fdf and output the results to output.out.

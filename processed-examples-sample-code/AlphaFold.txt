@@ -1,18 +1,15 @@
 Use Case: Protein structure prediction
-Code details and examples:
-AlphaFold is a deep learning-based method for predicting protein structures. Due to its complexity and the need for specialized hardware, it is typically run on cloud providers or specialized HPC clusters. To run AlphaFold, you would need to provide a protein sequence in the FASTA format as input.
 
-Here is an example input file `protein.fasta` containing a protein sequence:
+Code details and examples: 
+Input file format: Protein sequence in FASTA format
 ```
->protein_name
-MTEITAAMVKELRESTGAGMMDCKNALSETNGDFDKAVQLLREKGLGKAAKKADRLAAEG
-LVSVKVSDDFTIAAMRPSYLSYEDLDMTFVENEYKALVAELEKENEERRRLKDPNKPEHK
-IPQFASWRNRWDPGSGRQGSGSITSGKTLASLGFKGAGVGGGASLKLLSDTAAAGVA
-```
-
-To run AlphaFold with the provided input file, you would need to use the following command:
-```
-alphafold --input protein.fasta --output predicted_structure.pdb
+>protein_sequence
+MADQLTEEQIAEFKEAFSLFDKDGDGTITTKELGTVMRSLGQNPTEAELRDICLARFADKILKRLG
+DYKDDDDMKKKKDKVVKDSGVRFKVIGNGFGLFEVGEAEFKKEHEQLLSAVDYVNTMKTPEDVQAH
+DYKKEMPSSGAEAKPPQ
 ```
 
-Please note that you would need to have access to a system with the necessary hardware and software dependencies installed to run AlphaFold successfully.
+Command to run AlphaFold:
+```
+python3 run_alphafold.py --fasta protein.fasta --output_dir output
+```

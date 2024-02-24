@@ -1,26 +1,12 @@
-Use Case: Compute complex error function and its related functions using libcerf
+Use Case: Error function, Faddeeva function
+Input files format: Accepts real or complex numbers
+Command to run: Not available
 
 Code details and examples:
-```c
-#include <stdio.h>
-#include <cerf.h>
+```python
+from scipy.special import wofz
 
-int main() {
-    double complex z = 1.5 + 0.5*I;
-    double complex w = cerf(z);
-    
-    printf("Error function of %.2f + %.2fi is %.6f + %.6fi\n", creal(z), cimag(z), creal(w), cimag(w));
-    
-    return 0;
-}
-```
-
-Command to compile code:
-```bash
-gcc example.c -lcerf -lm -o example
-```
-
-Command to run compiled code:
-```bash
-./example
+z = 1.0 + 1.0j
+result = wofz(z)
+print(result)
 ```

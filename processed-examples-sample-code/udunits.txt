@@ -1,29 +1,19 @@
-Use Case: Units conversion and manipulation ; udunits is a library for working with units of physical quantities. It allows for unit conversions, arithmetic operations between quantities with different units, and supports a wide range of unit types.
+Use Case: Unit conversion in scientific computing.
 
 Code details and examples:
-1. Sample input file (input.txt):
-```
-23 Celsius
-```
-
-2. Sample code snippet to convert temperature from Celsius to Fahrenheit using udunits package:
 ```python
-from udunits import Unit
+from udunits2 import Unit
 
-with open("input.txt", "r") as f:
-    data = f.readline().split()
-    value = float(data[0])
-    unit = Unit(data[1])
+# Create a Unit object for converting temperature from Celsius to Fahrenheit
+celsius = Unit('degree_Celsius')
+fahrenheit = Unit('degree_Fahrenheit')
 
-# Convert temperature from Celsius to Fahrenheit
-if unit.is_convertible_to(Unit("degF")):
-    new_value = unit.convert(value, Unit("degF"))
-    print(new_value)
-else:
-    print("Units are not compatible for conversion.")
-```
+# Define the value in Celsius
+celsius_value = 25.0
 
-3. Command to run the code:
+# Convert Celsius to Fahrenheit
+fahrenheit_value = celsius.convert(celsius_value, fahrenheit)
+
+print(f"{celsius_value} degrees Celsius is equal to {fahrenheit_value} degrees Fahrenheit.")
 ```
-python your_script.py
-```
+Ensure you have the `udunits2` Python library installed before running this code.

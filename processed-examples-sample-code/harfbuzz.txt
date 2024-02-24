@@ -1,48 +1,24 @@
-Use Case: Text shaping with HarfBuzz library
+Harfbuzz is an open-source text shaping engine that converts Unicode text into beautifully formatted text in various languages and scripts.
 
+Use Case: Text shaping for complex scripts
 Code details and examples:
-HarfBuzz is a text shaping library used in text layout and rendering. It is commonly used in software localization, internationalization, and font rendering applications.
 
-Example code snippet for using HarfBuzz to shape text:
-```C
-#include <hb.h>
-#include <hb-ft.h>
-
-int main() {
-    hb_buffer_t *buffer;
-    hb_font_t *font;
-    hb_face_t *face;
-
-    // Create buffer
-    buffer = hb_buffer_create();
-    hb_buffer_add_utf8(buffer, "Hello, HarfBuzz!", -1, 0, -1);
-
-    // Create font
-    face = hb_ft_face_create(...); // Load font face using FreeType
-    font = hb_font_create(face);
-
-    // Shape text
-    hb_shape(font, buffer, NULL, 0);
-
-    // Retrieve shaped glyphs
-    unsigned int len;
-    hb_glyph_info_t *glyph_info = hb_buffer_get_glyph_infos(buffer, &len);
-
-    // Print shaped glyphs
-    for (unsigned int i = 0; i < len; i++) {
-        printf("Cluster %d, Codepoint %d, Glyph %d\n", glyph_info[i].cluster, glyph_info[i].codepoint, glyph_info[i].codepoint);
-    }
-
-    // Cleanup
-    hb_buffer_destroy(buffer);
-    hb_font_destroy(font);
-    hb_face_destroy(face);
-
-    return 0;
-}
+Input file (input.txt):
+```
+ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ
 ```
 
-You can compile the code above with the HarfBuzz library using a command similar to:
+Code (pseudo-code):
 ```
-gcc `pkg-config --cflags --libs harfbuzz` your_file.c -o executable
+import harfbuzz
+
+text = read_input_file('input.txt')
+shaped_text = harfbuzz.shape_text(text)
+
+print(shaped_text)
+```
+
+Command to run (if available):
+```
+python script.py
 ```

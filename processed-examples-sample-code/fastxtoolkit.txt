@@ -1,21 +1,23 @@
-Use Case: Quality filter Fastq file using fastxtoolkit
-
-Code details and examples:
-
-```bash
-# Quality filter a Fastq file
-fastq_quality_filter -Q33 -q 20 -p 80 -i input.fastq -o output.fastq
+Use Case: Quality filtering of fastq files  
+Code details and examples:  
+```
+fastq_quality_filter -i input_file.fastq -o output_file.fastq -q 20 -p 50
 ```
 
-Input file format:
-- Fastq file (input.fastq)
+Use Case: FASTQ to FASTA conversion  
+Code details and examples:  
+```
+fastq_to_fasta -i input_file.fastq -o output_file.fasta
+```
 
-Specifications:
-- `-Q33`: Quality values are encoded with an ASCII offset of 33
-- `-q 20`: Minimum quality score required
-- `-p 80`: Percentage of bases that must have at least the given quality score
+Use Case: FASTQ statistics  
+Code details and examples:  
+```
+fastq_quality_stats -i input_file.fastq -o output_file.txt
+```
 
-Command to run:
-```bash
-fastq_quality_filter -Q33 -q 20 -p 80 -i input.fastq -o output.fastq
+Use Case: FASTQ length distribution  
+Code details and examples:  
+```
+fastq_length_dist -i input_file.fastq -o output_file.txt
 ```

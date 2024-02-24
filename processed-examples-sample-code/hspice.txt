@@ -1,49 +1,23 @@
-Use Case: Circuit simulation using HSPICE
+Use Case: Electronic circuit simulation
 
-Code details and examples:
+Code details and examples: 
+HSPICE is a popular circuit simulator used for analog and mixed-signal simulations. To run a simple transient analysis using HSPICE, you need to create a netlist file (.sp) that describes the circuit and simulation settings.
+
+Sample input file (sample_circuit.sp):
 ```
-* Sample HSPICE input deck for a simple CMOS inverter circuit
-* CMOS inverter with 180nm technology
-* Supply voltage = 1.8V
-* Vin = 0.9V
-
-* Include technology file
-.include cmos180.lib
-
-* Circuit netlist
-M1 out in Vdd Vdd pmos W=1u L=0.18u
-M2 out in gnd gnd nmos W=1u L=0.18u
-
-Vdd Vdd 0 1.8
-Vin in 0 0.9
-
-.params t_rise = 1ps
-
-* Transient simulation for 10ns with a timestep of 0.1ps
-.TRAN 0.1ps 10ns
-
-* Output variables to be saved in the output file
+* Simple RC circuit
+V1 in 0 1.5
+R1 in out 1k
+C1 out 0 1u
 .control
-run
-print tran v(in) v(out)
-wrdata out_tr VDD VDD V(in) V(out)
-let delay = V(out) = 0.9/2 from=0 to=10ns
-wrdata delay_t out_tr.out_delay = delay
-let transition = v(out) [deltime(v(out)=0.9) - deltime(v(out)=0.9)/2] from=0 to=10ns
-wrdata ttran_t out_tr.out_ttran = transition
-let trise = v(out) [10% vdd] from=0 to=10ns
-wrdata tr_t out_tr.out_trise = trise
-let falltime = v(out) [10% V(OUT(0))] fill=interpl from=0 to=10ns
-wrdata FallT_LL_t out_tr.out_falltime = falltime
-let rise_slew = v(out) [90% vdd] from=0 to=20ns
-wrdata rise_slew_t out_tr.out_rise_slew = rise_slew
-let fall_slew = v(out) [10% vdd] from=0 to=20ns
-wrdata fall_slew_t out_tr.out_fall_slew = fall_slew
+tran 0.1us 10us
 .endc
 .end
 ```
 
-Command to run HSPICE simulation:
+To run this simulation, you can use the following command:
 ```
-hspice -i inverter_simulation.sp -o inverter_simulation.lis
+hspice sample_circuit.sp
 ```
+
+This will execute the HSPICE simulation on the provided netlist file and generate the simulation results.

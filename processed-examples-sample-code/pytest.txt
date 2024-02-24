@@ -1,15 +1,16 @@
-Use Case: Unit testing in Python using Pytest
+Use Case: Unit testing with pytest
 Code details and examples:
-Sample test script (test_sample.py):
+Sample input files: 
+- test_sample.py
 ```python
-def add(x, y):
-    return x + y
+def test_addition():
+    assert 1 + 1 == 2
 
-def test_add():
-    assert add(1, 2) == 3
-    assert add(5, 5) == 10
+def test_subtraction():
+    assert 5 - 3 == 2
 ```
-To run the test script with Pytest:
-```bash
+
+Command to run:
+```
 pytest test_sample.py
 ```
