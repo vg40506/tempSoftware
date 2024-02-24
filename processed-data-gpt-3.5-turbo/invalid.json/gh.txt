@@ -1,0 +1,1 @@
+I'm sorry, I didn't get any input from you. Could you please provide a list of software, compilers, python libraries, computational software, conda packages, bioinformatics and HPC tools for me to generate the JSON string as requested?

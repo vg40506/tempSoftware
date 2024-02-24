@@ -1,0 +1,1 @@
+I can provide you with the JSON output for a list of software, compilers, python libraries, computational software, conda packages, bioinformatics, and HPC tools. Could you please provide me with the list of tools you would like the JSON output for?

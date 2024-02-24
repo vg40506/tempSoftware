@@ -1,0 +1,1 @@
+I'm sorry, but I didn't understand the input correctly. Could you please provide a list of software, compilers, python libraries, computational software, conda packages, bioinformatics, and HPC tools that you would like me to provide information about in a JSON format?

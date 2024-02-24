@@ -1,0 +1,1 @@
+Could you please provide the list of software, compilers, python libraries, computational software, conda packages, bioinformatics, and HPC tools you want me to generate detailed JSON outputs for?
