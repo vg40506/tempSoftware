@@ -1,12 +1,34 @@
-Use Case: Performance analysis for HPC applications.
+HPCToolkit is a set of performance analysis tools for profiling applications to identify performance bottlenecks in parallel programs. 
 
+Use Case: Profile a parallel application with HPCToolkit
 Code details and examples:
-- Input files: HPCToolkit requires the binary executable of the application you want to analyze. It also needs profiling data files generated during the execution of the application.
-- Command to run: hpctoolkit <path_to_executable>
 
-Example:
-```
-hpctoolkit my_application
+Input file (sample MPI application):
+```c
+#include <stdio.h>
+#include <mpi.h>
+
+int main(int argc, char *argv[]) {
+    int rank, size;
+    MPI_Init(&argc, &argv);
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
+
+    printf("Hello from rank %d out of %d\n", rank, size);
+
+    MPI_Finalize();
+    return 0;
+}
 ```
 
-Note: HPCToolkit provides a suite of tools for performance analysis, including hpcrun for collecting performance data during the execution of the application, hpcstruct for analyzing the executable's structure, and hpclink for correlating source code with performance metrics.
+Compilation command (assuming MPI is installed):
+```
+mpicc mpi_hello.c -o mpi_hello
+```
+
+Profiling command with HPCToolkit:
+```
+hpcrun ./mpi_hello
+```
+
+This will generate profiling data that can be visualized using HPCToolkit's GUI tool for further analysis.

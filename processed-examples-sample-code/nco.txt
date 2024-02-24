@@ -1,13 +1,17 @@
-Use Case: NetCDF Operators (NCO) is a suite of command-line tools for manipulating and analyzing NetCDF files.
-
+Use Case: NCO (NetCDF Operators)
+  
 Code details and examples:
-NCO provides a wide range of functionalities for working with NetCDF files. Here is an example of how you can use NCO to extract a variable from a NetCDF file:
+NCO is a set of command-line tools for working with NetCDF files commonly used in climate data analysis. Below is a simple example of extracting a variable from a NetCDF file using NCO.
 
 ```bash
-ncap2 -s "output_variable=input_variable" input_file.nc output_file.nc
+# Extract a variable from a NetCDF file
+ncks -v variable input_file.nc output_file.nc
 ```
 
-In this example, `ncap2` is the NCO operator used to create a new variable (`output_variable`) by assigning it the values of an existing variable (`input_variable`) from the input file (`input_file.nc`). The resulting NetCDF file will be saved as `output_file.nc`.
+In this command:
+- `ncks`: NCO command for extracting or manipulating variables in NetCDF files.
+- `-v variable`: Specifies the variable you want to extract.
+- `input_file.nc`: Input NetCDF file.
+- `output_file.nc`: Output NetCDF file with the extracted variable.
 
-For more information on NCO and its capabilities, you can refer to the official NCO documentation: http://nco.sourceforge.net/
-```
+Note: NCO provides a wide range of functionalities for working with NetCDF files, such as concatenating, averaging, selecting, and more.

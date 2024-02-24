@@ -1,10 +1,20 @@
-Use Case: Monitoring system resources with htop
-Code details and examples:
-htop is a popular interactive process viewer and system monitor for Unix systems. It provides real-time information on CPU, memory, and processes running on a system.
+I see you mentioned htop, which is a popular interactive system-monitor process viewer. While it isn't as much an HPC software, I can provide information on how to run and use it.
 
-To run htop, simply open a terminal and type:
+Use Case: Monitoring system processes using htop utility
+Code details and examples:
+1. To install htop, please use the package manager specific to your operating system. For example, on Ubuntu, you can use:
+```bash
+sudo apt-get install htop
+```
+
+2. Once installed, you can simply run htop by typing:
 ```bash
 htop
 ```
 
-This will launch the interactive htop interface showing system resource usage in a more visual and user-friendly way compared to the standard top command. You can navigate through the interface using the arrow keys and keyboard shortcuts displayed at the bottom of the screen.
+3. You can navigate using the arrow keys and some important shortcuts include:
+- F5: Sort processes
+- F9: Kill a process
+- F10: Quit htop
+
+Please let me know if you need more information on running or using htop.

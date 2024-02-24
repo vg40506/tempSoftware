@@ -1,6 +1,8 @@
-Use Case: Run a Java program with OpenJDK. 
+OpenJDK is an open-source implementation of the Java Platform, Standard Edition. Below are some examples and details for using OpenJDK:
 
+Use Case: Compile and run a Java program using OpenJDK
 Code details and examples:
+- Sample Java program (HelloWorld.java):
 ```java
 public class HelloWorld {
     public static void main(String[] args) {
@@ -8,19 +10,15 @@ public class HelloWorld {
     }
 }
 ```
-Save the above code in a file named `HelloWorld.java`.
 
-Compile the Java code using the `javac` command:
-```
+- Compilation command:
+```bash
 javac HelloWorld.java
 ```
 
-Run the compiled program using the `java` command:
-```
+- Run command:
+```bash
 java HelloWorld
 ```
 
-This will output:
-```
-Hello, World!
-```
+- Note: Make sure you have OpenJDK installed on your machine before running the commands.

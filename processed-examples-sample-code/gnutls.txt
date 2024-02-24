@@ -1,53 +1,45 @@
-Use Case: Secure communication with TLS/SSL encryption using GnuTLS library.
-
+Use Case: Secure network communication using GnuTLS
 Code details and examples:
-GnuTLS is a library that provides functions for secure communication over TLS/SSL protocols. Below is an example of how to use GnuTLS in a C program to establish a secure connection with a server:
+GnuTLS is a secure communications library implementing SSL, TLS, and DTLS protocols. It provides encryption, authentication, and cryptographic functions for secure network communication.
+
+To use GnuTLS in a C program, you need to include the necessary header files and link against the GnuTLS library. Here is a simple example of using GnuTLS to create a secure connection with a server:
 
 ```c
 #include <stdio.h>
 #include <gnutls/gnutls.h>
 
 int main() {
-    gnutls_certificate_credentials_t credentials;
-    gnutls_session_t session;
-    int ret;
-
     gnutls_global_init();
-
-    gnutls_certificate_allocate_credentials(&credentials);
-    gnutls_certificate_set_x509_key_file(credentials, "server.crt", "server.key", GNUTLS_X509_FMT_PEM);
-
+    
+    // Initialize the session
+    gnutls_session_t session;
     gnutls_init(&session, GNUTLS_CLIENT);
-
-    gnutls_server_name_set(session, GNUTLS_NAME_DNS, "example.com");
-
-    ret = gnutls_handshake(session);
-    if (ret < 0) {
-        fprintf(stderr, "Handshake failed\n");
-        return 1;
-    }
-
-    printf("Connected successfully\n");
-
+    
+    // Set the server hostname
+    gnutls_server_name_set(session, GNUTLS_NAME_DNS, "example.com", strlen("example.com"));
+    
+    // Perform the handshake
+    gnutls_handshake(session);
+    
+    // Secure communication goes here
+    
+    // Close the session
     gnutls_bye(session, GNUTLS_SHUT_RDWR);
-
     gnutls_deinit(session);
-    gnutls_certificate_free_credentials(credentials);
-
+    
     gnutls_global_deinit();
-
+    
     return 0;
 }
 ```
 
-Make sure to have the server's certificate ("server.crt") and private key ("server.key") in the same directory as this program. This is a basic example and may require additional error handling and configuration for a real-world scenario.
+Please note that this is a simplified example. In a real-world application, you would need error handling, certificate verification, etc.
 
-To compile the program, use the following command:
-```bash
-gcc -o tls_client tls_client.c -lgnutls
+To compile and run the program, you can use the following commands:
+
+```shell
+gcc -o my_program my_program.c -lgnutls
+./my_program
 ```
 
-To run the compiled program:
-```bash
-./tls_client
-```
+This will compile the program and run it, establishing a secure connection with the server "example.com".

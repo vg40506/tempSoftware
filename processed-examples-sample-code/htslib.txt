@@ -1,39 +1,37 @@
-Use Case: Working with BAM files using htslib
+Use Case: Working with sequence alignment files using htslib. 
 
 Code details and examples: 
+Htslib is a software library for working with high-throughput sequencing data. One common use case for htslib is to manipulate and analyze sequence alignment files (SAM/BAM/CRAM format). Here is an example of using htslib to extract information from a BAM file.
 
-htslib is a software library for accessing common sequence file formats, including SAM and BAM formats. Here is an example of using htslib to view information from a BAM file.
-
-```c
+Code:
+```
 #include <htslib/sam.h>
 
 int main() {
-    samFile *fp = hts_open("example.bam", "r");
-    bam_hdr_t *header = sam_hdr_read(fp);
-    bam1_t *read = bam_init1();
-    
-    while (sam_read1(fp, header, read) >= 0) {
-        printf("Read name: %s\n", bam_get_qname(read));
+    htsFile *bam_file = hts_open("example.bam", "r");
+    bam_hdr_t *header = sam_hdr_read(bam_file);
+    bam1_t *aln = bam_init1();
+
+    while (sam_read1(bam_file, header, aln) >= 0) {
+        // Access read information, e.g. position, sequence, quality, etc.
+        // Example: Print read name
+        printf("Read name: %s\n", bam_get_qname(aln));
     }
-    
-    bam_destroy1(read);
+
+    bam_destroy1(aln);
     bam_hdr_destroy(header);
-    sam_close(fp);
+    hts_close(bam_file);
 
     return 0;
 }
 ```
 
-This code snippet opens a BAM file "example.bam", reads the header, and then iterates through the reads in the file, printing out the read names.
-
-To compile the code, you can use the following command (assuming the file is named `example.c`):
-
-```bash
-gcc -o example example.c -lhts
+To compile the above code:
+```
+gcc -o extract_reads extract_reads.c -lhts
 ```
 
 To run the compiled program:
-
-```bash
-./example
+```
+./extract_reads
 ```

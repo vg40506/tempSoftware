@@ -1,41 +1,44 @@
-Use Case: Debugging and profiling tool for C/C++ applications.
+I am familiar with the libunwind library. Here is an example of how it can be used:
 
+Use Case: Extracting stack trace using libunwind
 Code details and examples:
-
-To use `libunwind`, you typically include the `libunwind` headers in your C/C++ code and link against the `libunwind` library during compilation.
-
-Sample code snippet:
-
-```c
-#include <libunwind.h>
+- Sample input file (sample.cpp):
+```cpp
 #include <stdio.h>
+#include <libunwind.h>
 
-void backtrace() {
+void print_backtrace() {
     unw_cursor_t cursor;
     unw_context_t context;
 
-    // Initialize the cursor
     unw_getcontext(&context);
     unw_init_local(&cursor, &context);
 
-    // Iterate through the stack frames
     while (unw_step(&cursor) > 0) {
-        unw_word_t ip;
-        unw_get_reg(&cursor, UNW_REG_IP, &ip);
-        printf("ip: %lx\n", (unsigned long)ip);
+        unw_word_t offset, pc;
+        unw_get_reg(&cursor, UNW_REG_IP, &pc);
+        unw_get_proc_name(&cursor, NULL, 0, &offset);
+
+        char sym[256];
+        unw_get_proc_name(&cursor, sym, sizeof(sym), &offset);
+        printf("    %s\n", sym);
     }
 }
 
 int main() {
-    backtrace();
+    print_backtrace();
     return 0;
 }
 ```
 
-To compile this code with `libunwind`, you can use the following command:
-
-```bash
-gcc -o backtrace_example backtrace_example.c -lunwind
+- Compilation command:
+```
+gcc -o sample sample.cpp -lunwind
 ```
 
-This will generate an executable `backtrace_example` that demonstrates how to use `libunwind` to print the backtrace of a program.
+- Command to run compiled program:
+```
+./sample
+```
+
+This code snippet demonstrates how to use the libunwind library to extract a stack trace in a C++ program.

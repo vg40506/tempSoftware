@@ -1,12 +1,24 @@
-Use Case: ColabFold is a Google Colab notebook implementation of AlphaFold for protein structure prediction.
+Use Case: ColabFold is a tool for protein structure prediction and analysis.
 
 Code details and examples:
-1. Access the ColabFold notebook: 
-   - Go to https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb
-   - Click on "Open in Playground" to create a copy in your Google Drive.
+ColabFold can be used directly in Google Colab notebooks. Here is an example of how to use it for protein structure prediction:
 
-2. Follow the instructions in the notebook to run AlphaFold for protein structure prediction. This involves providing the protein sequence in the input box and then running the cells in the notebook.
+```python
+# Install necessary libraries
+!pip install biopython
+!pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
+!pip install tape_proteins
 
-3. The notebook uses the AlphaFold model to predict the 3D structure of the input protein sequence.
+# Download the ColabFold repository
+!git clone https://github.com/sokrypton/ColabFold
 
-Note: Since AlphaFold is a resource-intensive tool, using Google Colab provides access to GPU resources for faster computation.
+# Move to the ColabFold directory
+%cd ColabFold
+
+# Run the AlphaFold model for protein structure prediction
+!python3 run_alphafold.py --use_ptm --use_msa examples/1u19A/B.ali
+```
+
+In the example above, we first install necessary libraries, then download the ColabFold repository, move into the directory, and finally run the AlphaFold model for protein structure prediction on a sample input file `B.ali`.
+
+Please note that ColabFold is based on AlphaFold and requires a Google Colab environment for execution.

@@ -1,37 +1,56 @@
-Use Case: dakota is a flexible, extensible, and multiplatform software framework for design exploration and optimization. It offers parameter studies, optimization, uncertainty quantification, and sensitivity analysis capabilities.
+Dakota is a software package for optimization, uncertainty quantification, parameter estimation, and sensitivity analysis. 
 
+Use Case: Dakota for sensitivity analysis
 Code details and examples:
-For running dakota, you would typically provide a configuration file in which you specify the method, response functions, variables, and other details related to the study. Here is an example of a dakota input file named `dakota.in`:
-
-```plaintext
+1. Create a input file for Dakota (input.in):
+```
 environment
   tabular_data
-    tabular_data_file = 'results.dat'
-
-method
-  analysis_driver = 'python dakota_script.py'
-  parameters_file = 'parameters.in'
-  interface
-    fork
-  asynchronous
-    evaluation_concurrency = 2
-
-model
-  single
-
-responses
-  objective_functions = 1
-  no_gradients
+    tabular_data_file = 'sens_data.dat'
+    tabular_data_file_format = 'ascii'
+    separable_concatenate = 'both'
+  method_pointer
+    analysis_driver = './sens_analysis_driver'
+  input_file
+    input_file_name = 'sens.in'
 ```
 
-In this example, `dakota_script.py` is a Python script that reads the input parameters from `parameters.in` and writes the results to `results.dat`.
-
-To run dakota with this input file, you would use the command:
-
+2. Create a sample input file for the analysis driver (sens.in):
 ```
-dakota -i dakota.in
+sensitivity_method
+  global
+  {
+    output_ranked = 5
+  }
 ```
 
-This command tells dakota to read the input file `dakota.in` and execute the study according to the specified configurations.
+3. Create a data file (sens_data.dat) with sample data:
+```
+5 4
+0 0 0 0
+1 2 3 4
+2 4 6 8
+3 6 9 12
+4 8 12 16
+5 10 15 20
+```
 
-Please note that the input file format and details may vary depending on the specific study being conducted.
+4. Create an analysis driver code (sens_analysis_driver) in C++ for sensitivity analysis:
+```cpp
+#include <iostream>
+#include "dakota_global_defs.hpp"
+#include "dakota_sensitivity.hpp"
+
+int main()
+{
+  Dakota::Sensitivity sens_analysis;
+  sens_analysis.readInputDeck(std::cin);
+  sens_analysis.writeOutputDeck(std::cout);
+  return 0;
+}
+```
+
+5. Run Dakota with the input file:
+```
+dakota -i input.in -o output.out
+```

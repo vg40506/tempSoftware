@@ -1,29 +1,80 @@
-Use Case: LibXML is a library for parsing and manipulating XML documents.
+Use Case: Parsing XML data using LibXML
 
 Code details and examples:
-LibXML can be used with various programming languages like C, Perl, Python, etc. Here is an example using Python to parse an XML file with LibXML:
+LibXML is a library for parsing and manipulating XML files. Here is an example of how you can use LibXML in C to parse an XML file.
 
-Sample input file (input.xml):
+Sample Input file (example.xml):
 ```xml
-<root>
-    <child>This is a child node</child>
-</root>
+<bookstore>
+  <book>
+    <title>Harry Potter</title>
+    <author>J.K. Rowling</author>
+    <year>2005</year>
+  </book>
+  <book>
+    <title>The Lord of the Rings</title>
+    <author>J.R.R. Tolkien</author>
+    <year>1954</year>
+  </book>
+</bookstore>
 ```
 
-Python code to parse input.xml using LibXML:
-```python
-from lxml import etree
+Code (example.c):
+```c
+#include <stdio.h>
+#include <libxml/parser.h>
+#include <libxml/tree.h>
 
-# Parse the XML file
-tree = etree.parse("input.xml")
-root = tree.getroot()
+int main() {
+    xmlDocPtr doc;
+    xmlNodePtr root, node;
 
-# Access and print the value of the child node
-child_node = root.find("child")
-print(child_node.text)
+    doc = xmlReadFile("example.xml", NULL, 0);
+    if (doc == NULL) {
+        fprintf(stderr, "Failed to parse document\n");
+        return 1;
+    }
+
+    root = xmlDocGetRootElement(doc);
+    for (node = root->children; node != NULL; node = node->next) {
+        if (node->type == XML_ELEMENT_NODE) {
+            printf("Node name: %s\n", node->name);
+            xmlNodePtr child = node->children;
+            while (child != NULL) {
+                if (child->type == XML_ELEMENT_NODE) {
+                    printf("%s: %s\n", child->name, xmlNodeGetContent(child));
+                }
+                child = child->next;
+            }
+            printf("\n");
+        }
+    }
+
+    xmlFreeDoc(doc);
+    xmlCleanupParser();
+    return 0;
+}
 ```
 
-Command to run the Python code (assuming the file is named parse_xml.py):
-```bash
-python parse_xml.py
+Compile the code:
+```
+gcc example.c -o example -I/usr/include/libxml2 -lxml2
+```
+
+Run the code:
+```
+./example
+```
+
+Output:
+```
+Node name: book
+title: Harry Potter
+author: J.K. Rowling
+year: 2005
+
+Node name: book
+title: The Lord of the Rings
+author: J.R.R. Tolkien
+year: 1954
 ```

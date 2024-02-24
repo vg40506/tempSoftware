@@ -1,27 +1,39 @@
-Use Case: Interactive Data Language (IDL)
+I'm assuming you are referring to IDL (Interactive Data Language) by Harris Geospatial Solutions. 
+
+Use Case: Visualization and analysis of scientific data in astronomy, geosciences, and other fields.
 Code details and examples:
-IDL is a programming language primarily used for data analysis and visualization in scientific research and engineering fields. Below is an example of how to load and visualize a sample data file using IDL.
-
-Sample input file (data.txt):
-```
-1 2 3
-4 5 6
-7 8 9
-```
-
-Code to load and plot data in IDL:
 ```idl
-; Load data from file
-data = fltarr(3, 3)
-openr, lun, 'data.txt', /get_lun
-readf, lun, data
-free_lun, lun
+; Sample input file: data.txt
+; Format: x y
+; Comments: # symbol at the beginning of a line
+1 10
+2 20
+3 30
 
-; Plot data
-plot_image, data
+; Code snippet to read data and plot a simple graph
+data = read_ascii('data.txt', /silent)
+plot, data[*, 0], data[*, 1], /xsty
 ```
 
-Command to run the script:
+Use Case: Image processing and analysis.
+Code details and examples:
+```idl
+; Sample input file: image.fits
+; Format: FITS image file
+; Note: FITS (Flexible Image Transport System) is a standard format in astronomy
+image = mrdfits('image.fits', 0)
+histogram, image, min=min_value, max=max_value, binsize=10
 ```
-idl script.pro
+
+Use Case: Time series analysis.
+Code details and examples:
+```idl
+; Sample input file: timeseries.dat
+; Format: time value
+; Comments: # symbol at the beginning of a line
+time_series = read_ascii('timeseries.dat', /silent)
+result = timeseries_analysis(time_series)
+print, result
 ```
+
+Please note that the actual code syntax may vary based on the version of IDL you are using.

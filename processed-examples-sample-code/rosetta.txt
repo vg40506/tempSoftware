@@ -1,20 +1,13 @@
-Use Case: Molecular modeling and protein structure prediction with Rosetta.
+Use Case: Protein structure prediction and design
 
 Code details and examples:
-**Rosetta** is a software suite for modeling and designing proteins, and it is commonly used in structural bioinformatics and protein engineering.
+Rosetta is a suite of software tools for protein structure prediction and design. One of the common tasks performed using Rosetta is protein structure prediction or ab initio folding.
 
-To run Rosetta, you typically need a command line and input files in PDB format for the protein structure you want to model or design.
-
-For example, to perform protein structure prediction with Rosetta:
-
-1. Download the Rosetta software suite from the RosettaCommons website.
-2. Prepare an input PDB file of the protein structure you want to predict.
-3. Run the following command in the terminal:
-
-```bash
-/path/to/rosetta/main/source/bin/AbinitioRelax.default.linuxgccrelease -in:file:s input.pdb -nstruct 10
+Example of running ab initio folding with Rosetta:
+```
+$ROSETTA3/bin/AbinitioRelax.default -s input.pdb -nstruct 10
 ```
 
-This command performs an ab initio protein structure prediction using Rosetta with 10 output models.
+In the example above, input.pdb is the input PDB file of the protein structure for which ab initio folding will be performed. The -nstruct flag specifies the number of structures to generate during the folding process.
 
-Please refer to the Rosetta documentation for more specific command options and usage instructions.
+Please note that the actual command may vary slightly depending on the version of Rosetta and the specific task you are performing.

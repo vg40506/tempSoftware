@@ -1,34 +1,27 @@
-Use Case: GLWF is a library for creating windows with OpenGL contexts and managing input, amongst other things.  
-Code details and examples:  
-```c
+Use Case: GLFW
+GLFW is a library for creating windows with OpenGL contexts and managing input. It provides a simple API for creating windows, contexts and surfaces, receiving input and events.
+
+Code details and examples:
+```C
 #include <GLFW/glfw3.h>
 
 int main() {
     GLFWwindow* window;
-
-    // Initialize the library
+    
     if (!glfwInit()) {
         return -1;
     }
 
-    // Create a windowed mode window and its OpenGL context
-    window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
+    window = glfwCreateWindow(640, 480, "Example", NULL, NULL);
+    
     if (!window) {
         glfwTerminate();
         return -1;
     }
 
-    // Make the window's context current
     glfwMakeContextCurrent(window);
 
-    // Loop until the user closes the window
     while (!glfwWindowShouldClose(window)) {
-        // Render here
-
-        // Swap front and back buffers
-        glfwSwapBuffers(window);
-
-        // Poll for and process events
         glfwPollEvents();
     }
 
@@ -37,7 +30,10 @@ int main() {
 }
 ```
 
-To compile the above code, you can use the following command:  
+To compile the code with GLFW, you may need to link against the GLFW library. Here is an example compilation command using gcc:
+
+```bash
+gcc example.c -o example -lglfw -lGL -lm
 ```
-gcc main.c -o app -lglfw -framework OpenGL
-```
+
+This assumes that the GLFW library is installed on your system and can be found by the compiler.

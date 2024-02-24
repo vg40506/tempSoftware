@@ -1,34 +1,27 @@
-Use Case: PyRosetta is a Python-based interface to the Rosetta molecular modeling suite, designed for protein structure prediction and design tasks.
+Use Case: Protein structure prediction and design in Rosetta using Python interface pyRosetta
 
 Code details and examples:
 ```python
-# Sample code to perform protein structure prediction with PyRosetta
-from pyrosetta import init, pose_from_file
-from pyrosetta.teaching import PyJobDistributor
+# Sample code to perform protein structure prediction with pyRosetta
+from pyrosetta import *
+pyrosetta.init()
 
-# Initialize PyRosetta
-init()
+# Create a pose from a sequence
+pose = pose_from_sequence("AAAAA")
 
-# Load a protein structure from a PDB file
-pose = pose_from_file("input.pdb")
+# Setup a score function
+scorefxn = get_fa_scorefxn()
 
-# Perform protein structure prediction using PyJobDistributor
-jd = PyJobDistributor("output", 10, "score")
-for decoy in range(1, 11):
-    new_pose = pose.clone()
-    # Your modeling or design task here
-    jd.output_decoy(new_pose)
+# Perform energy minimization
+print("Before minimization:", scorefxn(pose))
+mm = MinMover()
+mm.score_function(scorefxn)
+mm.apply(pose)
+print("After minimization:", scorefxn(pose))
+
+# Output the minimized structure to a PDB file
+pose.dump_pdb("minimized_structure.pdb")
 ```
 
-Command to run the script:
-```
-python your_script.py
-```
-
-Sample input files:
-- input.pdb: Protein structure in PDB format
-
-Requirements:
-- PyRosetta library needs to be installed and properly configured
-
-Please note that PyRosetta is not freely available and requires a license for usage.
+Command to run the script (if applicable):
+No direct command line usage, must be run within a Python environment with pyRosetta installed.

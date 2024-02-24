@@ -1,40 +1,29 @@
-Use Case: Structural analysis using OpenSees
-
-Code details and examples:
-OpenSees is a software framework for developing applications to simulate the behavior of structural and geotechnical systems. Below is an example of how to run a simple structural analysis using OpenSees for a 2D frame structure.
-
-Input file (2DFrameAnalysis.tcl):
+Use Case: Finite element analysis with OpenSees  
+Code details and examples:  
+Input file format:
 ```
-model BasicBuilder -ndm 2 -ndf 2
+# define nodes
 node 1 0.0 0.0
-node 2 5.0 0.0
-node 3 5.0 3.0
-node 4 0.0 3.0
-fix 1 1 1
-fix 4 1 1
-fix 4 2 1
-mass 2 10.0 1.0 1.0
-element elasticBeamColumn 1 1 2 3000 100 100
-element elasticBeamColumn 2 2 3 3000 100 100
-element elasticBeamColumn 3 3 4 3000 100 100
-timeSeries Linear 1
-pattern Plain 1 Linear {
-    sp 1 1 1 -1
-    load 2 0.0 -10.0
-}
-constraints Transformation
-numberer RCM
-system ProfileSPD
-test NormDispIncr 1.0e-6 6 1
-algorithm Newton
-integrator LoadControl 0.1
-analysis Static
-analyze 10
+node 2 0.0 5.0
+node 3 5.0 5.0
+node 4 5.0 0.0
+
+# define elements
+element quad 1 1 2 3 4 $matTag thick
+element quad 2 5 6 7 8 $matTag thick
+
+# define material
+uniaxialMaterial Elastic 1 30000
+
+# define section
+section Elastic 1 10 10
+
+# define thick
+set thick 0.1
 ```
 
-To run the analysis using the input file above:
+Command to run OpenSees:
 ```
-OpenSees 2DFrameAnalysis.tcl
-```
-
-This will perform a static analysis on the 2D frame structure defined in the input file and provide the results of the analysis.
+$ OpenSees filename.tcl
+```  
+Make sure to replace `filename.tcl` with the actual name of your OpenSees script file.

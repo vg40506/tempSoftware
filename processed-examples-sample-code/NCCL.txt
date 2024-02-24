@@ -1,37 +1,20 @@
-Use Case: NCCL (NVIDIA Collective Communication Library) is a library for high-performance communication primitives optimized for NVIDIA GPUs.
+NCCL (NVIDIA Collective Communications Library) is a software library developed by NVIDIA for high-performance communication in parallel computing environments. It is designed to leverage multiple GPUs within a single node for efficient data communication.
 
+Use Case: Multi-GPU AllReduce
 Code details and examples:
-NCCL provides C and C++ APIs for collective communication operations such as all-gather, all-reduce, broadcast, reduce, etc. Here is a sample code snippet demonstrating the usage of NCCL in a CUDA C++ program:
+```python
+import nccl
 
-```cpp
-#include <stdio.h>
-#include <nccl.h>
+# Initialize NCCL communicator
+comm = nccl.NcclCommunicator()
 
-int main() {
-    ncclComm_t comm;
-    ncclCommInitRank(&comm, 2, ncclUniqueId, 1);
+# Define input data
+input_data = [1, 2, 3, 4]
 
-    float* data;
-    cudaMalloc(&data, sizeof(float));
+# Perform allreduce operation across multiple GPUs
+output_data = comm.allreduce(input_data)
 
-    // Execute an all-reduce operation
-    ncclAllReduce(data, data, 1, ncclFloat, ncclSum, comm, cudaStreamDefault);
-
-    cudaFree(data);
-    ncclCommDestroy(comm);
-
-    return 0;
-}
+print(output_data)
 ```
 
-The above code snippet demonstrates a simple CUDA program that initializes an NCCL communicator, performs an all-reduce operation on a float data array, and then destroys the communicator.
-
-To compile the code, you can use the following command (assuming you have NVIDIA CUDA Toolkit and NCCL installed):
-```bash
-nvcc -o nccl_example nccl_example.cu -lnccl
-```
-
-You can then run the executable by executing:
-```bash
-./nccl_example
-```
+Please note that the above code snippet is a simplistic example and may not reflect the actual implementation details. The command to run the code will depend on how you have set up your Python environment with NCCL support.

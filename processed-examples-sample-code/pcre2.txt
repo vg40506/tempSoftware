@@ -1,15 +1,19 @@
-Use Case: PCRE2 (Perl Compatible Regular Expressions 2) is a C library for implementing regular expression pattern matching. It can be used for pattern matching in various programming languages and tools.
+I'm going to assume you are referring to the PCRE2 library for Perl-compatible regular expressions. 
 
+Use Case: Pattern matching with PCRE2
 Code details and examples:
-1. Sample PCRE2 regular expression pattern matching program in C:
+PCRE2 provides a versatile library for pattern matching using regular expressions in various programming languages. Here is a simple example in C:
+
 ```c
-#include <stdio.h>
 #include <pcre2.h>
+#include <stdio.h>
+#include <string.h>
 
 int main() {
     pcre2_code *re;
-    PCRE2_SPTR pattern = (PCRE2_SPTR)"hello";
-    PCRE2_SPTR subject = (PCRE2_SPTR)"hello world";
+    PCRE2_SPTR pattern = (PCRE2_SPTR)"cat";
+    PCRE2_SPTR subject = (PCRE2_SPTR)"The cat sat on the mat";
+    
     int errornumber;
     PCRE2_SIZE erroroffset;
     
@@ -22,31 +26,28 @@ int main() {
         return 1;
     }
     
-    pcre2_match_data *match_data = pcre2_match_data_create(20, NULL);
+    pcre2_match_data *match_data = pcre2_match_data_create_from_pattern(re, NULL);
     
     int rc = pcre2_match(re, subject, PCRE2_ZERO_TERMINATED, 0, 0, match_data, NULL);
     
     if (rc > 0) {
-        printf("Match found\n");
-    } else {
-        printf("Match not found\n");
+        PCRE2_SIZE *ovector = pcre2_get_ovector_pointer(match_data);
+        printf("Match succeeded at offset %d\n", (int)ovector[0]);
     }
     
     pcre2_match_data_free(match_data);
     pcre2_code_free(re);
-
+    
     return 0;
 }
 ```
 
-2. To compile the above program (assuming file name is `pcre2_example.c`) using the PCRE2 library:
-```bash
-gcc pcre2_example.c -lpcre2-8 -o pcre2_example
-```
+This C program demonstrates how to compile a simple regular expression "cat" and match it against a subject string "The cat sat on the mat" using PCRE2 library. 
 
-3. To run the compiled program:
-```bash
-./pcre2_example
-```
+In the above code snippet, you need to link with the PCRE2 library while compiling. 
 
-Note: Make sure to have PCRE2 library installed on your system and link it properly during compilation.
+You can compile and run the code using the following commands:
+```
+gcc pcre_example.c -lpcre2-8 -o pcre_example
+./pcre_example
+```

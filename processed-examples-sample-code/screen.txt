@@ -1,45 +1,25 @@
-Use Case:-
-Screen is a full-screen window manager that multiplexes a physical terminal. It allows users to have multiple terminal sessions within a single terminal window or remote terminal session. 
+I am assuming you are referring to the GNU Screen utility, which is a terminal multiplexer that allows multiple sessions to be created, managed, and easily switched between.
 
-Code details and examples:-
-1. Creating a new screen session:
+Use Case: Create a new screen session
+Code details and examples:
+Code:
 ```bash
-screen -S session_name
+screen
 ```
+This command will start a new screen session.
 
-2. Detaching from a screen session:
-Press `Ctrl + A`, then `Ctrl + D`
-
-3. Reattaching to a detached screen session:
-```bash
-screen -r session_name
-```
-
-4. List all available screen sessions:
+Use Case: List all screen sessions
+Code details and examples:
+Code:
 ```bash
 screen -ls
 ```
+This command will list all screen sessions currently running.
 
-5. Terminating a screen session:
-Inside the screen session, use `exit` or `Ctrl + D`
-
-Sample Input:-
-- A user wants to create a new screen session with the name "mySession".
-- A user wants to reattach to the "mySession" screen session.
-- A user wants to terminate the screen session "mySession".
-
-Commands:-
-1. Create a new screen session:
+Use Case: Attach to a specific screen session
+Code details and examples:
+Code:
 ```bash
-screen -S mySession
+screen -r <session_id>
 ```
-
-2. Reattach to the "mySession" screen session:
-```bash
-screen -r mySession
-```
-
-3. Terminate the "mySession" screen session:
-Inside the screen session, type `exit` and press Enter.
-
-Please note that these commands may vary depending on the system's configuration and installed version of the Screen utility.
+Replace `<session_id>` with the ID of the session you want to attach to.

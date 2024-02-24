@@ -1,44 +1,19 @@
-Use Case: Generate a mesh for a 2D domain using aspect.
+Aspect is a 3D thermal convection and fluid dynamics simulation software used in geodynamics research. 
 
+Use Case: Model convection in the Earth's mantle
 Code details and examples:
-Aspect is a code that generates meshes for convection or Stokes-driven mantle convection simulations. It is used for creating finite element meshes for geodynamics simulations.
+```aspect
+# Sample input file for convection simulation
+subsection Materials
+set Rock     Density 3300
+set Rock     Viscosity 10^21
+end
 
-Input file format (example .prm file):
-```
-subsection Mesh refinement
-  eccentricity 0.2
-  density = 0.1
-  adaptive_timestep_frequency = 2
-  mesh_generator_output_format xda
-  generate_initial_mass_lump 2
-  max_initial_mesh_resolution 1.0e6
-  max_grid_refinement_level 6
-  mesh_adaptation = shear_band
-  partial_shrinkage_rate 0.2
-  parallel_mesh_adaptation = false
-  adaptive_mesh_surf_acceleration_underestimation = 0.25
-  adaptive_mesh_surf_acceleration_overestimation = 1.75
-  refinement_fracture_temperature = 1000.0
-  refinement_fracture_shear_strain = 0.02
-  adaptive_initial_mesh = true
-  mesh_adaptation_yield_tolerances 0.1 0.5
-  mesh_adaptation_yied_strain_limits 1.0e-4 1.0e-2
-  mesh_adaptation_minimal_divergence 10.0
-  mesh_adaptation_creep_coarsening = 2
-  adaptive_mesh_opt_itr = 10
-  timeout = 28
-  mesh_adaptive = true
-  sgp_fracture = true
-  sgp_post_fracture = false
-  refine_initial_drivers 6
-  refine_initial_slab 6
-  adaptive_limic_sigma 2
-  adaptive_lithosphere_sigma 1.75
-  adaptive_lithosphere_accage true
+subsection Initial temperature model
+set Initial temperature model Box
+set Initial temperature model Domain 0 0 0 1000 1000 300
+set Initial temperature model Minimum 1300
+set Initial temperature model Maximum 1800
 end
 ```
-
-Command to run aspect:
-```
-aspect example.prm
-```
+To run the simulation, use the command `aspect input.pr`.

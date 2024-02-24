@@ -1,38 +1,52 @@
-Use Case: Secure multi-party computation (MPC)  
-Code details and examples:  
-MPC is a cryptographic technique that allows multiple parties to jointly compute a function over their inputs while keeping those inputs private. One popular library for MPC is the "mpc" library in C.
+It seems like you are referring to the Message Passing Interface (MPI) library instead of "mpc". 
 
-**Example: Secure addition using MPC in C**
+Use Case: Message Passing Interface (MPI)
+Code details and examples:
+1. Sample input file (e.g., "input.txt") for MPI application:
+```
+4
+8
+2
+1
+```
+
+2. Sample MPI code in C language to parallelize a simple computation (e.g., summing up the numbers in the input file):
 ```c
-#include <mpc.h>
+#include <mpi.h>
+#include <stdio.h>
 
-int main() {
-    mpc_init2(PREC_BITS); // initialize the MPC library with a certain precision
-    
-    mpc_t x, y, z;
-    mpc_init2(x, PREC_BITS);
-    mpc_init2(y, PREC_BITS);
-    mpc_init2(z, PREC_BITS);
-    
-    mpc_set_d(x, 5.0, MPC_RNDNN); // set input x = 5
-    mpc_set_d(y, 7.0, MPC_RNDNN); // set input y = 7
-    
-    mpc_add(z, x, y, MPC_RNDNN); // securely compute z = x + y
-    
-    // display the result
-    mpc_out_str(stdout, 10, 0, z, MPC_RNDNN);
-    
-    mpc_clear(x);
-    mpc_clear(y);
-    mpc_clear(z);
-    
-    mpc_cleanup(); // cleanup the MPC library
+int main(int argc, char *argv[]) {
+    int rank, size;
+    int sum = 0;
+    int num;
+
+    MPI_Init(&argc, &argv);
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+
+    if (rank == 0) {
+        FILE *fp = fopen("input.txt", "r");
+        while (fscanf(fp, "%d", &num) != EOF) {
+            sum += num;
+        }
+        fclose(fp);
+    }
+
+    MPI_Bcast(&sum, 1, MPI_INT, 0, MPI_COMM_WORLD);
+
+    if (rank == 0) {
+        printf("Total sum: %d\n", sum);
+    }
+
+    MPI_Finalize();
     return 0;
 }
 ```
 
-To compile and run the above code:
-```bash
-gcc -o secure_add secure_add.c -lmpc
-./secure_add
+3. Command to compile and run the MPI code (assuming the file is named "mpi_sum.c"):
 ```
+mpicc mpi_sum.c -o mpi_sum -lm
+mpiexec -n 4 ./mpi_sum
+```
+
+Please note that the above example is a simple demonstration of using MPI for parallel computing. The actual implementation and usage may vary depending on the specific use case.

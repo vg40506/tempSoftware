@@ -1,16 +1,14 @@
-Use Case: AnnotSV is a software tool for annotating and prioritizing structural variants (SVs) detected from genome sequencing data.
+AnnotSV is a software tool used for annotating structural variants in human genomes. It provides comprehensive annotations such as gene intersect, functional impact, and population frequency for the detected structural variants.
+
+Use Case: Annotating a structural variant using AnnotSV
 
 Code details and examples:
-AnnotSV takes a VCF file containing SVs as input. Below is an example command to run AnnotSV on a VCF file:
+```bash
+# AnnotSV requires an input VCF file containing structural variants
+# Example input VCF file: input.vcf
 
+# Annotate the structural variants using AnnotSV
+AnnotSV -SVinputFile input.vcf -outputDir output_annotation
 ```
-AnnotSV -SVinputFile input.vcf -outputFile output.txt
-```
 
-In this command:
-- `-SVinputFile`: specifies the input VCF file containing SVs.
-- `-outputFile`: specifies the output file where the annotated and prioritized SVs will be saved.
-
-AnnotSV provides detailed annotations for each SV, including information about genes, functional impact, allele frequency, and more.
-
-Note: AnnotSV also requires a reference genome file for annotation. Make sure to have the reference genome available when running the tool.
+In this example, AnnotSV takes an input VCF file containing structural variants and annotates them, generating output files in the specified output directory.

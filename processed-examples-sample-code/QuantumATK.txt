@@ -1,27 +1,37 @@
-Use Case: QuantumATK is a software platform for atomic-scale modeling of materials.
+QuantumATK is a premium software package for atomic-scale modeling of materials, nanostructures, and devices. It is widely used in research areas such as solid-state physics, chemistry, and materials science.
 
+Use Case: Electronic structure calculation
 Code details and examples:
-```python
-# Sample input file for QuantumATK
-# Input for running a DFT calculation on a molecule
 
-# Define the molecule
-molecule = Molecule(atoms=[Atom('C', [0.0, 0.0, 0.0]),
-                           Atom('O', [1.2, 0.0, 0.0])])
+Input file format (example input file for DFT calculation):
+```
+# QuantumATK input file for DFT calculation
+# Define the physical system
+PhysicalSystem(
+    name = "bulk_si",
+    valence_electrons = 8,
+    atomic_coordinates = [[0.0, 0.0, 0.0], [0.25, 0.25, 0.25]],
+    elements = [14, 14],
+    initial_spin_guess = [1.0, 1.0],
+    k_point_sampling = MonkhorstPackGrid(4, 4, 4),
+    k_point_interpolator = Kerker(epsilon=1.0e-6)
+)
 
-# Set up the calculator
-calculator = LCAOCalculator(method=LCAO.HartreeFock, basis_set='3-21G')
+# Define the calculator (e.g., DFTB, ATK-DFT, etc.)
+Calculator(
+    name = "DFT",
+    method = DFTB(
+        k_point_sampling = {"path" : "automatic"}
+    )
+)
 
-# Set up the calculation
-calculation = SinglePointCalculator(molecule=molecule, 
-                                    calculator=calculator)
-
-# Run the quantum calculation
-output = calculation.run()
-
-# Retrieve the results
-energy = output.energy
-forces = output.forces
+# Run the calculation
+results = ATKCalculators.DFTB(bulk_si)
+energy = results.total_energy
+print(f"Total energy: {energy} eV")
 ```
 
-To run the calculation, you would typically use the QuantumATK GUI or command-line interface with specific commands provided by the software documentation.
+Command to run the calculation:
+```
+quantumatk input.in > output.out
+```

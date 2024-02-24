@@ -1,46 +1,45 @@
-Use Case: Key-value store for HPC applications.
+LMDB (Lightning Memory-Mapped Database) is a fast, memory-efficient database library. 
+
+Use Case: Creating an LMDB database with Python
 
 Code details and examples:
-LMDB (Lightning Memory-Mapped Database) is a key-value store library designed for high-performance applications. Below is an example of using LMDB in Python:
-
-1. Install the LMDB library (if not already installed):
-```
-pip install lmdb
-```
-
-2. Import the library and create a LMDB environment:
 ```python
 import lmdb
 
-# Path to the LMDB environment
-env_path = "./my_lmdb_environment"
-map_size = 100 * 1024 * 1024  # 100MB map size
+# Create a new LMDB environment
+env = lmdb.open('mydatabase', map_size=104857600)  # 100 MB map size
 
-# Open the LMDB environment
-env = lmdb.open(env_path, map_size=map_size)
-```
-
-3. Store key-value pairs in the LMDB database:
-```python
-# Begin a write transaction
+# Begin a new write transaction
 with env.begin(write=True) as txn:
-    # Put key-value pair into the database
-    txn.put(b"key1", b"value1")
-```
+    # Open the database
+    db = txn.cursor()
 
-4. Retrieve value using a key from the LMDB database:
-```python
-# Begin a read transaction
-with env.begin() as txn:
-    value = txn.get(b"key1")
-    
-    if value:
-        print(value.decode("utf-8"))
-```
+    # Insert key-value pairs
+    db.put(b'key1', b'value1')
+    db.put(b'key2', b'value2')
 
-5. Close the LMDB environment when done:
-```python
+# Close the LMDB environment
 env.close()
 ```
 
-Please refer to the LMDB documentation for more advanced usage and optimization techniques.
+Use Case: Accessing an LMDB database with Python
+
+Code details and examples:
+```python
+import lmdb
+
+# Open an existing LMDB environment
+env = lmdb.open('mydatabase', readonly=True)
+
+# Begin a read transaction
+with env.begin() as txn:
+    # Open the database
+    db = txn.cursor()
+
+    # Retrieve value for a key
+    value = db.get(b'key1')
+    print(value)
+
+# Close the LMDB environment
+env.close()
+```

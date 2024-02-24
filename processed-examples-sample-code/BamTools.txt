@@ -1,44 +1,17 @@
-Use Case: BAM file manipulation
-
+Use Case: View BAM file statistics
 Code details and examples:
-BamTools is a C++ API and toolkit for manipulating BAM (Binary Alignment/Map) files. Below is an example of how to use BamTools to extract reads from a BAM file.
-
-```cpp
-#include "api/BamReader.h"
-#include "api/BamAlignment.h"
-#include <iostream>
-
-int main() {
-    BamTools::BamReader reader;
-    if (!reader.Open("input.bam")) {
-        std::cerr << "Error opening BAM file." << std::endl;
-        return 1;
-    }
-
-    BamTools::BamAlignment al;
-    while (reader.GetNextAlignment(al)) {
-        // Process the alignment
-        // For example, print the read name
-        std::cout << al.Name << std::endl;
-    }
-
-    reader.Close();
-    return 0;
-}
-```
-
-To compile the above code (assuming the BamTools library is correctly installed), you can use the following command:
-
 ```bash
-g++ -o extract_reads extract_reads.cpp -lbamtools
+bamtools stats -in input.bam
 ```
 
-To run the compiled program:
-
+Use Case: Extract sequences from a BAM file
+Code details and examples:
 ```bash
-./extract_reads
+bamtools convert -format fasta -in input.bam -out output.fasta
 ```
 
-This will read the BAM file "input.bam" and print the read names to the standard output.
-
-Please note that you may need to adjust the include paths and library paths based on your installation of BamTools.
+Use Case: Filter reads based on mapping quality
+Code details and examples:
+```bash
+bamtools filter -in input.bam -mapQuality ">30" -out filtered.bam
+```
