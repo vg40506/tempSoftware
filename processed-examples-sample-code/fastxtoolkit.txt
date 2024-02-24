@@ -1,0 +1,21 @@
+Use Case: Quality filter Fastq file using fastxtoolkit
+
+Code details and examples:
+
+```bash
+# Quality filter a Fastq file
+fastq_quality_filter -Q33 -q 20 -p 80 -i input.fastq -o output.fastq
+```
+
+Input file format:
+- Fastq file (input.fastq)
+
+Specifications:
+- `-Q33`: Quality values are encoded with an ASCII offset of 33
+- `-q 20`: Minimum quality score required
+- `-p 80`: Percentage of bases that must have at least the given quality score
+
+Command to run:
+```bash
+fastq_quality_filter -Q33 -q 20 -p 80 -i input.fastq -o output.fastq
+```

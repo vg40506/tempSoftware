@@ -1,0 +1,28 @@
+Use Case: Visualization of 3D objects using freeglut  
+Code details and examples:  
+```c
+#include <GL/freeglut.h>
+
+void display() {
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    // Draw 3D objects here
+    glutSwapBuffers();
+}
+
+int main(int argc, char** argv) {
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
+    glutCreateWindow("3D Visualization");
+
+    glutDisplayFunc(display);
+
+    glEnable(GL_DEPTH_TEST);
+
+    glutMainLoop();
+    return 0;
+}
+```
+You can compile the code using the following command:  
+```bash
+gcc -o visualization visualization.c -lglut -lGL -lGLU
+```

@@ -1,0 +1,23 @@
+Use Case: Aria2 is a lightweight multi-protocol & multi-source command-line download utility.
+Code details and examples:
+- To download a file using aria2:
+```bash
+aria2c http://example.com/file.zip
+```
+
+- To download multiple files concurrently:
+```bash
+aria2c http://example.com/file1.zip http://example.com/file2.zip http://example.com/file3.zip
+```
+
+- To download a file with multiple connections:
+```bash
+aria2c -x 4 http://example.com/large_file.zip
+```
+
+- To download a file and save it with a specific name:
+```bash
+aria2c -o output_file.zip http://example.com/file.zip
+```
+
+Note: aria2 is a versatile tool with many options for customization. More details on the usage and options can be found in the official documentation.

@@ -1,0 +1,6 @@
+Use Case: Transcript assembly, differential expression, and differential regulation for RNA-Seq.
+
+Code details and examples:
+```
+cufflinks -p 8 -o output_folder input_file.bam
+```

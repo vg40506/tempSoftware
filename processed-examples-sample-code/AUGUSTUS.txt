@@ -1,0 +1,7 @@
+Use Case: Gene prediction using AUGUSTUS
+Input file format: Input sequences in FASTA format
+Code details and examples:
+```
+# Run AUGUSTUS with input file
+augustus --species=your_species input_sequence.fa
+```

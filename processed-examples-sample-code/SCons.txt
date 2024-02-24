@@ -1,0 +1,20 @@
+Use Case: Build a simple C program using SCons
+
+Code details and examples:
+```python
+# SConstruct file
+Program('hello', ['hello.c'])
+
+# hello.c file
+#include <stdio.h>
+
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}
+```
+
+To build the program using SCons, simply run the command:
+```
+scons
+```

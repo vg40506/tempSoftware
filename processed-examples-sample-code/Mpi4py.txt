@@ -1,0 +1,21 @@
+Use Case: MPI communication using mpi4py library in Python
+Code details and examples:
+```python
+from mpi4py import MPI
+
+comm = MPI.COMM_WORLD
+rank = comm.Get_rank()
+size = comm.Get_size()
+
+if rank == 0:
+    data = {'key1': [7, 2.72, 2+3j], 'key2': (2, 3)}
+    comm.send(data, dest=1)
+elif rank == 1:
+    data = comm.recv(source=0)
+    print(f"Received data on process {rank}: {data}")
+```
+
+To run the above code in parallel, you can use the following command:
+```
+mpirun -n 2 python mpi_example.py
+```

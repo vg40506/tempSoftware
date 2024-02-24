@@ -1,0 +1,48 @@
+Use Case: ScaLAPACK is a parallel linear algebra library for distributed memory computers that provides high-performance linear algebra operations.
+
+Code details and examples:
+
+ScaLAPACK requires data to be distributed across multiple processes using the Scalable Linear Algebra PACKage (ScaLAPACK) Data Distribution Language (DDL) format. The main input files required are matrix data files in the DDL format.
+
+To run a ScaLAPACK example program, you typically compile the code using a Fortran compiler that supports ScaLAPACK, such as Intel Fortran Compiler (ifort) or GNU Fortran Compiler (gfortran), along with the ScaLAPACK library.
+
+Here is an example code snippet for solving a system of linear equations using ScaLAPACK:
+
+```fortran
+program solve_linear_system
+  implicit none
+  
+  integer, parameter :: n = 100
+  integer :: info, nprocs, myrank, grid(2), context, desc_a(9)
+  real*8, allocatable :: a(:,:), b(:), x(:)
+  
+  ! Initialize MPI
+  call mpi_init(info)
+  call mpi_comm_size(MPI_COMM_WORLD, nprocs, info)
+  call mpi_comm_rank(MPI_COMM_WORLD, myrank, info)
+  
+  ! Define the process grid for data distribution
+  grid = (/0, 0/) ! 1x1 process grid
+  call blacs_get(0, 0, context)
+  call blacs_gridinit(context, 'Row-major', grid)
+  
+  ! Allocate and initialize the matrix A and vector b
+  allocate(a(n,n), b(n), x(n))
+  ! Read the matrix A and vector b from files
+  
+  ! Initialize the ScaLAPACK descriptor for matrix A
+  descinit(desc_a, n, n, nb, nb, 0, 0, context, max(1,n), info)
+  
+  ! Solve the linear system Ax = b
+  call pdgesv(n, 1, a, 1, 1, desc_a, ipiv, b, 1, 1, desc_b, info)
+  
+  ! Clean up
+  deallocate(a, b, x)
+  
+  ! Finalize MPI
+  call mpi_finalize(info)
+  
+end program solve_linear_system
+```
+
+This is just a basic example to demonstrate the structure of a ScaLAPACK program. Depending on the specific problem you are solving, the input data files and format may vary.

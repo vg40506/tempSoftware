@@ -1,0 +1,21 @@
+Use Case: Image processing, conversion, and editing  
+Code details and examples:  
+1. Convert an image from one format to another:
+```bash
+gm convert input.jpg output.png
+```
+
+2. Resize an image:
+```bash
+gm convert input.jpg -resize 50% output.jpg
+```
+
+3. Crop an image:
+```bash
+gm convert input.jpg -crop 100x100+0+0 output.jpg
+```
+
+4. Add text to an image:
+```bash
+gm convert input.jpg -gravity Center -pointsize 36 -fill white -annotate +0+0 "Hello!" output.jpg
+```

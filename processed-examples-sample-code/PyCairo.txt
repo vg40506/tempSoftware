@@ -1,0 +1,20 @@
+Use Case: PyCairo is a set of Python bindings for the popular 2D graphics library Cairo.
+
+Code details and examples:
+```python
+import cairo
+
+surface = cairo.SVGSurface("example.svg", 400, 400)
+context = cairo.Context(surface)
+
+context.set_source_rgb(0, 0, 0)
+context.rectangle(10, 10, 380, 380)
+context.stroke()
+
+surface.finish()
+```
+
+To run the above code snippet, you can save it in a Python file (e.g., `example.py`) and run it using the Python interpreter:
+```
+python example.py
+```

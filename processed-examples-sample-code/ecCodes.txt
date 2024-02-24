@@ -1,0 +1,31 @@
+Use Case: Read and decode meteorological data files using ecCodes.
+
+Code details and examples:
+ecCodes is a software package developed by the European Centre for Medium-Range Weather Forecasts (ECMWF) for encoding and decoding meteorological data. It supports various file formats commonly used in meteorology, such as GRIB and BUFR.
+
+Here is an example of how to use ecCodes to decode a GRIB file:
+
+Sample input file (example.grib):
+```
+sample GRIB file content 
+```
+
+Python code snippet:
+```python
+import eccodes
+
+def decode_grib_file(file_path):
+    with open(file_path, 'rb') as f:
+        message = eccodes.codes_bufr_new_from_file(f)
+        print(eccodes.codes_get(message, "shortName"))
+        eccodes.codes_release(message)
+
+decode_grib_file('example.grib')
+```
+
+In the code snippet above, we open the GRIB file 'example.grib', decode the contents using ecCodes, and print the value of the key 'shortName' from the decoded message.
+
+To run the script, save the code in a Python file (e.g., decode_grib.py) and run it using a Python interpreter:
+```
+python decode_grib.py
+```
