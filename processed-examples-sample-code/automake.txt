@@ -1,0 +1,20 @@
+Use Case: automake is a tool for automatically generating Makefile.in files compliant with the GNU Coding Standards.
+
+Code details and examples:
+Automake requires a file named 'configure.ac' (or 'configure.in' for older projects) for input. Here is an example of a simple 'configure.ac' file:
+
+```sh
+AC_INIT([hello], [1.0], [hello@example.com])
+AM_INIT_AUTOMAKE
+AC_PROG_CC
+AC_CONFIG_FILES([Makefile])
+AC_OUTPUT
+```
+
+To generate the Makefile.in file from the configure.ac file, you can run the following command:
+
+```sh
+$ automake --add-missing
+```
+
+This will create the Makefile.in file which can then be used with autoconf to generate the final Makefile.

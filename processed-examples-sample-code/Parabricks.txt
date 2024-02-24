@@ -1,0 +1,25 @@
+Use Case: Accelerating genomic analysis workflows using GPU-accelerated Parabricks software for variant calling, genome assembly, and more.
+
+Code details and examples:
+Parabricks provides a range of GPU-accelerated tools for bioinformatics analysis. Here is an example of using Parabricks for variant calling with sample input files.
+
+1. Variant Calling:
+Input files:
+- Sample BAM file
+- Reference genome FASTA file
+
+Command to run Parabricks for variant calling:
+```
+pbrun germline --ref <reference_file.fasta> --bam <sample_file.bam> --output <output_directory> 
+```
+
+2. Genome Assembly:
+Input files:
+- Raw sequencing reads (in FASTQ format)
+
+Command to run Parabricks for genome assembly:
+```
+pbrun assemble --input <reads_file.fastq> --output <output_directory>
+```
+
+Make sure to provide the correct input files and file paths according to your data.

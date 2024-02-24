@@ -1,0 +1,25 @@
+Use Case: GUI development  
+Code details and examples:  
+For developing GUI applications using wxWidgets, you can start by creating a simple "Hello World" application. Here is an example code snippet using C++:
+
+```cpp
+#include <wx/wx.h>
+
+class MyApp : public wxApp {
+public:
+    virtual bool OnInit() {
+        wxFrame *frame = new wxFrame(NULL, wxID_ANY, "Hello World");
+        frame->Show(true);
+        return true;
+    }
+};
+
+wxIMPLEMENT_APP(MyApp);
+```
+
+To run the wxWidgets application, you can use the following command:
+
+```bash
+g++ -o hello_world hello_world.cpp `wx-config --cppflags --libs`
+./hello_world
+```

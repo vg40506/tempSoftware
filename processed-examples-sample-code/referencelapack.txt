@@ -1,0 +1,24 @@
+Use Case: Linear algebra operations like matrix factorization, solving linear systems, eigenvalue problems, etc.
+
+Code details and examples: 
+- LAPACK is typically used through another library or software that provides interface to LAPACK functions. For example, NumPy and SciPy in Python use LAPACK routines under the hood. Here's an example usage in Python using NumPy:
+
+```python
+import numpy as np
+from scipy.linalg import lu_factor, lu_solve
+
+# Sample input matrix
+A = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 10]])
+b = np.array([3, 6, 9])
+
+# Perform LU decomposition
+lu, piv = lu_factor(A)
+
+# Solve linear system
+x = lu_solve((lu, piv), b)
+print(x)
+```
+
+- Input files: Input matrices can be provided in the form of arrays or matrices depending on the interface being used.
+
+- Command to run: The LAPACK functions are typically not run directly but through the interface library that utilizes LAPACK. In this case, the Python script can be executed using `python script_name.py`.

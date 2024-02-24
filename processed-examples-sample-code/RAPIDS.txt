@@ -1,0 +1,44 @@
+Use Case: RAPIDS is a suite of open-source software libraries and APIs built on CUDA for executing end-to-end data science and analytics pipelines entirely on GPUs.
+
+Code details and examples:
+1. cuDF - DataFrame manipulation library:
+Sample input file format: CSV file
+```python
+import cudf
+
+# Load CSV file into a cuDF DataFrame
+df = cudf.read_csv('sample.csv')
+
+# Perform operations on the DataFrame
+```
+
+2. cuGraph - Graph analytics library:
+Sample input file format: Edge list file
+```python
+import cugraph
+
+# Load edge list file into a cuGraph Graph
+G = cugraph.Graph()
+G.from_cudf_edgelist(edge_list_df)
+
+# Run graph algorithms
+```
+
+3. cuML - Machine learning library:
+Sample input file format: CSV file for training data
+```python
+import cuml
+
+# Load CSV file into a cuDF DataFrame
+train_data = cudf.read_csv('train.csv')
+
+# Split data into X (features) and y (target)
+X = train_data.drop(columns=['target'])
+y = train_data['target']
+
+# Train a machine learning model
+model = cuml.LinearRegression()
+model.fit(X, y)
+```
+
+To run these examples, you need to have RAPIDS installed and configured correctly on a system with compatible GPUs and CUDA drivers.

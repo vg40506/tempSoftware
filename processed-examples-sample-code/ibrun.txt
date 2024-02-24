@@ -1,0 +1,14 @@
+Use Case: ibrun is a utility for running MPI jobs on HPC clusters. It is commonly used to launch parallel applications across multiple nodes.
+
+Code details and examples:
+```bash
+ibrun <executable>
+```
+
+In this example, suppose you have a compiled MPI executable named "my_mpi_program". You can run it using ibrun as follows:
+
+```bash
+ibrun my_mpi_program
+```
+
+This will launch the MPI executable on the allocated nodes of the HPC cluster.

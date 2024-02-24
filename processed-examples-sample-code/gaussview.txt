@@ -1,0 +1,21 @@
+Use Case: GaussView is a visualization program for computational chemistry calculations.
+
+Code details and examples:
+```bash
+# Example input file: input.gjf (Gaussian input file)
+# Sample content of input.gjf:
+%chk=example.chk
+# HF/6-31G opt
+
+water optimization
+
+0 1
+O
+H 1 0.96
+H 1 0.96 2 104.5
+
+# Example command to run Gaussian calculation and generate output file:
+g16 input.gjf
+```
+
+Please note that GaussView is typically used in conjunction with Gaussian software for setting up jobs and visualizing output files.

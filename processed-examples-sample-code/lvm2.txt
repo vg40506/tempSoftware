@@ -1,0 +1,51 @@
+Use Case: Logical Volume Manager (lvm2) is a collection of tools for managing logical volumes. It is commonly used in storage management on Linux systems.
+Code details and examples:
+1. Create a Physical Volume (PV):
+```bash
+sudo pvcreate /dev/sdX
+```
+
+2. Create a Volume Group (VG):
+```bash
+sudo vgcreate my_vg /dev/sdX
+```
+
+3. Create a Logical Volume (LV):
+```bash
+sudo lvcreate -L 10G -n my_lv my_vg
+```
+
+4. Format the Logical Volume:
+```bash
+sudo mkfs.ext4 /dev/my_vg/my_lv
+```
+
+5. Mount the Logical Volume:
+```bash
+sudo mount /dev/my_vg/my_lv /mnt/my_mount_point
+```
+
+6. Display Volume Group information:
+```bash
+sudo vgdisplay my_vg
+```
+
+7. Extend a Logical Volume:
+```bash
+sudo lvextend -L +5G /dev/my_vg/my_lv
+```
+
+8. Check and repair a Logical Volume:
+```bash
+sudo e2fsck -f /dev/my_vg/my_lv
+```
+
+9. Resize the file system on a Logical Volume:
+```bash
+sudo resize2fs /dev/my_vg/my_lv
+```
+
+10. Remove a Logical Volume:
+```bash
+sudo lvremove /dev/my_vg/my_lv
+```

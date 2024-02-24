@@ -1,0 +1,27 @@
+Use Case: QuantumATK is a software platform for atomic-scale modeling of materials.
+
+Code details and examples:
+```python
+# Sample input file for QuantumATK
+# Input for running a DFT calculation on a molecule
+
+# Define the molecule
+molecule = Molecule(atoms=[Atom('C', [0.0, 0.0, 0.0]),
+                           Atom('O', [1.2, 0.0, 0.0])])
+
+# Set up the calculator
+calculator = LCAOCalculator(method=LCAO.HartreeFock, basis_set='3-21G')
+
+# Set up the calculation
+calculation = SinglePointCalculator(molecule=molecule, 
+                                    calculator=calculator)
+
+# Run the quantum calculation
+output = calculation.run()
+
+# Retrieve the results
+energy = output.energy
+forces = output.forces
+```
+
+To run the calculation, you would typically use the QuantumATK GUI or command-line interface with specific commands provided by the software documentation.

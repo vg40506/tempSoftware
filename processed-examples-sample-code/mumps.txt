@@ -1,0 +1,39 @@
+Use Case: MUMPS (MUltifrontal Massively Parallel sparse direct Solver) is a parallel sparse direct solver often used in large scale scientific computing applications for solving linear systems of equations.
+
+Code details and examples:
+MUMPS can be used through various programming interfaces such as Fortran, C, and Python. Below is an example of how to use MUMPS in Python to solve a linear system of equations.
+
+```python
+import numpy as np
+from scipy.sparse import csr_matrix
+from scipy.sparse.linalg import spsolve
+from mumps import DMumpsContext
+
+# Define the coefficient matrix A and the right-hand side b
+A = csr_matrix([[4, -1, 0, 0, -1],
+                [-1, 4, -1, 0, 0],
+                [0, -1, 4, -1, 0],
+                [0, 0, -1, 4, -1],
+                [-1, 0, 0, -1, 4]])
+b = np.array([1, 2, 3, 4, 5])
+
+# Initialize the MUMPS solver
+mumps = DMumpsContext()
+mumps.set_symmetry(1)
+mumps.set_silent()
+
+# Factorize the matrix and solve the linear system
+mumps.analyze(A)
+mumps.factor(A)
+x = mumps.solve(b)
+
+print("Solution:", x)
+```
+
+Note: In the above code snippet, we first define the coefficient matrix `A` and the right-hand side `b`, then initialize the MUMPS solver using `DMumpsContext`. We analyze and factorize the matrix `A`, and finally solve the linear system to obtain the solution `x`.
+
+To run the Python script, ensure that the MUMPS library is installed and accessible in your Python environment. Run the script using a Python interpreter.
+
+```bash
+python mumps_example.py
+```

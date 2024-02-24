@@ -1,0 +1,16 @@
+Use Case: AOCC (AMD Optimizing C/C++ Compiler) is an optimizing compiler suite for C and C++ programming languages provided by AMD. It is designed to generate high-performance code for AMD processors.
+
+Code details and examples:
+- The commands to compile C or C++ code using AOCC are similar to using other compilers. The usage is typically the same.
+
+Example of compiling a C program with AOCC:
+```bash
+$ aocc-gcc -o output_file input_file.c
+```
+
+Example of compiling a C++ program with AOCC:
+```bash
+$ aocc-g++ -o output_file input_file.cpp
+```
+
+Note: The actual command may vary based on the specific version of AOCC being used. Make sure to refer to the documentation for the exact command syntax.

@@ -1,0 +1,6 @@
+Use Case: Debugging a program using lldb  
+Code details and examples:  
+```
+lldb my_program
+```
+This will launch lldb debugger for the program "my_program". You can set breakpoints, inspect variables, and step through the code using lldb commands.

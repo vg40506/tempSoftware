@@ -1,21 +1,23 @@
-Use Case: Image processing, conversion, and editing  
-Code details and examples:  
-1. Convert an image from one format to another:
-```bash
-gm convert input.jpg output.png
+Use Case: Image manipulation and processing 
+Code details and examples:
+```
+# Sample input file: image.jpg
+# Command to resize an image
+gm convert image.jpg -resize 50% resized_image.jpg
 ```
 
-2. Resize an image:
-```bash
-gm convert input.jpg -resize 50% output.jpg
+Use Case: Image conversion 
+Code details and examples:
+```
+# Sample input file: image.png
+# Command to convert image format
+gm convert image.png converted_image.jpg
 ```
 
-3. Crop an image:
-```bash
-gm convert input.jpg -crop 100x100+0+0 output.jpg
+Use Case: Drawing on images
+Code details and examples:
 ```
-
-4. Add text to an image:
-```bash
-gm convert input.jpg -gravity Center -pointsize 36 -fill white -annotate +0+0 "Hello!" output.jpg
+# Sample input file: original_image.jpg
+# Command to draw a red rectangle on an image
+gm convert original_image.jpg -fill none -stroke red -strokewidth 2 -draw "rectangle 10,10 100,100" image_with_rectangle.jpg
 ```

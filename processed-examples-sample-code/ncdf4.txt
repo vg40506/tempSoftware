@@ -1,0 +1,23 @@
+Use Case: NetCDF file manipulation in R using ncdf4 package
+
+Code details and examples:
+```R
+# Load the ncdf4 library
+library(ncdf4)
+
+# Open a NetCDF file for reading
+ncfile <- nc_open("example.nc")
+
+# Read a variable from the NetCDF file
+data <- ncvar_get(ncfile, "variable_name")
+
+# Close the NetCDF file
+nc_close(ncfile)
+```
+
+Command to run in R console:
+```R
+source("script.R")
+```
+
+Note: Replace "example.nc" with the actual path to your NetCDF file and "variable_name" with the name of the variable you want to read.

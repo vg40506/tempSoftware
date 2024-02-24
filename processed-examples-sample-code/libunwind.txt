@@ -1,0 +1,41 @@
+Use Case: Debugging and profiling tool for C/C++ applications.
+
+Code details and examples:
+
+To use `libunwind`, you typically include the `libunwind` headers in your C/C++ code and link against the `libunwind` library during compilation.
+
+Sample code snippet:
+
+```c
+#include <libunwind.h>
+#include <stdio.h>
+
+void backtrace() {
+    unw_cursor_t cursor;
+    unw_context_t context;
+
+    // Initialize the cursor
+    unw_getcontext(&context);
+    unw_init_local(&cursor, &context);
+
+    // Iterate through the stack frames
+    while (unw_step(&cursor) > 0) {
+        unw_word_t ip;
+        unw_get_reg(&cursor, UNW_REG_IP, &ip);
+        printf("ip: %lx\n", (unsigned long)ip);
+    }
+}
+
+int main() {
+    backtrace();
+    return 0;
+}
+```
+
+To compile this code with `libunwind`, you can use the following command:
+
+```bash
+gcc -o backtrace_example backtrace_example.c -lunwind
+```
+
+This will generate an executable `backtrace_example` that demonstrates how to use `libunwind` to print the backtrace of a program.

@@ -1,0 +1,46 @@
+Use Case: Key-value store for HPC applications.
+
+Code details and examples:
+LMDB (Lightning Memory-Mapped Database) is a key-value store library designed for high-performance applications. Below is an example of using LMDB in Python:
+
+1. Install the LMDB library (if not already installed):
+```
+pip install lmdb
+```
+
+2. Import the library and create a LMDB environment:
+```python
+import lmdb
+
+# Path to the LMDB environment
+env_path = "./my_lmdb_environment"
+map_size = 100 * 1024 * 1024  # 100MB map size
+
+# Open the LMDB environment
+env = lmdb.open(env_path, map_size=map_size)
+```
+
+3. Store key-value pairs in the LMDB database:
+```python
+# Begin a write transaction
+with env.begin(write=True) as txn:
+    # Put key-value pair into the database
+    txn.put(b"key1", b"value1")
+```
+
+4. Retrieve value using a key from the LMDB database:
+```python
+# Begin a read transaction
+with env.begin() as txn:
+    value = txn.get(b"key1")
+    
+    if value:
+        print(value.decode("utf-8"))
+```
+
+5. Close the LMDB environment when done:
+```python
+env.close()
+```
+
+Please refer to the LMDB documentation for more advanced usage and optimization techniques.

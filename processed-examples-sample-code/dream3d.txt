@@ -1,0 +1,13 @@
+Use Case: Dream.3D is an open-source software package for computational materials science. It is used for visualizing, processing, and analyzing microstructure and 3D imaging data. 
+
+Code details and examples:
+Dream.3D requires input data in .dream3d format, which is a specialized file format used for storing 3D data and associated information. Here is an example of how you can run Dream.3D:
+
+1. Open a terminal window.
+2. Navigate to the directory where Dream.3D is installed.
+3. Run the following command to start Dream.3D:
+```
+./Dream3D
+```
+
+Please note that Dream.3D is a graphical software package, so you will need to interact with it through its user interface once it is launched.

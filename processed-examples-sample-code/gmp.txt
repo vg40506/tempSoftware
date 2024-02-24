@@ -1,0 +1,34 @@
+Use Case: Arbitrary precision arithmetic library
+
+Code details and examples:
+GMP (GNU Multiple Precision Arithmetic Library) is a library for arbitrary precision arithmetic, operating on signed integers, rational numbers, and floating-point numbers. Here is an example of using GMP library in a C code.
+
+```c
+#include <stdio.h>
+#include <gmp.h>
+
+int main() {
+    mpz_t num1, num2, result;
+    
+    mpz_inits(num1, num2, result, NULL);
+    
+    mpz_set_str(num1, "123456789012345678901234567890", 10); // setting num1 to a large number
+    mpz_set_ui(num2, 987654321987654321); // setting num2 to an integer
+    
+    mpz_add(result, num1, num2); // adding num1 and num2 and storing the result in result
+    
+    gmp_printf("Result: %Zd\n", result); // printing the result
+    
+    mpz_clears(num1, num2, result, NULL);
+    
+    return 0;
+}
+```
+
+To compile and run the above code, you can use the following commands:
+```shell
+gcc -o gmp_example gmp_example.c -lgmp
+./gmp_example
+```
+
+This code initializes two arbitrary precision integers `num1` and `num2`, sets their values, and then adds them using GMP functions. The result is then printed to the console.

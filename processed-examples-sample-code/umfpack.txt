@@ -1,0 +1,24 @@
+Use Case: Solving sparse linear systems with UMFPACK
+
+Code details and examples:
+
+UMFPACK is a sparse direct solver package that can be used to solve large sparse linear systems efficiently. Here is an example of how you can use UMFPACK in MATLAB to solve a sparse linear system:
+
+```matlab
+% Define the sparse matrix A
+A = sparse([1, 1, 2, 2, 2], [1, 2, 1, 2, 3], [4, 1, 1, 2, 1], 2, 3);
+
+% Define the right-hand side vector b
+b = [8; 6];
+
+% Solve the linear system Ax = b using UMFPACK
+x = umfpack(A, b);
+
+disp(x);
+```
+
+In this example, `umfpack` is used to solve the sparse linear system Ax = b. The input matrix A is a sparse matrix defined using the sparse function, and the right-hand side vector b is defined as a dense vector. The result x is the solution to the linear system.
+
+To run this code in MATLAB, make sure to have UMFPACK installed and properly linked with MATLAB. 
+
+Please note that UMFPACK can also be used with other programming languages like C/C++ and Fortran. The process may vary depending on the specific language and environment.

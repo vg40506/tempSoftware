@@ -1,0 +1,25 @@
+Use Case: Software for solving differential and algebraic equations
+
+Code details and examples: 
+SUNDIALS (Suite of Nonlinear and Differential/Algebraic Equation Solvers) is a software package that provides robust and efficient solvers for differential and algebraic equations. Some of the solvers included in SUNDIALS are CVODE (for solving initial value problems for ODEs), IDA (for solving differential-algebraic equations), and ARKODE (for solving stiff ODEs).
+
+To use SUNDIALS, you need to provide input files specifying the differential equations and initial values. Here is a sample code snippet using the CVODE solver:
+
+```python
+from sundials import cvode
+
+def f(t, y, ydot, f_data):
+    ydot[0] = -0.04 * y[0] + 1.0e4 * y[1] * y[2]
+    ydot[1] = 0.04 * y[0] - 1.0e4 * y[1] * y[2] - 3.0e7 * y[1] ** 2
+    ydot[2] = 3.0e7 * y[1] ** 2
+
+y0 = [1.0, 0.0, 0.0]
+t0 = 0.0
+solver = cvode.CVode()
+solver.init(f, y0, t0)
+solver.solve(t_end=1.0)
+```
+
+In the above code snippet, we define the differential equations in the function `f`, specify the initial values `y0` and starting time `t0`, initialize the CVODE solver, and then solve the equations up to a specified end time `t_end`.
+
+Please note that the above code is just a simplified example, and actual usage may vary based on the specific problem you are trying to solve. Always refer to the SUNDIALS documentation for more detailed information and examples.

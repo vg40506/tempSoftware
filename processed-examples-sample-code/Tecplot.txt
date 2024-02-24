@@ -1,0 +1,19 @@
+Use Case: Visualization of 2D/3D scientific data  
+Code details and examples:  
+Tecplot is a software used for visualization of 2D and 3D scientific data. To use Tecplot, you can export your data in a supported format (e.g., ASCII) and then load the data into Tecplot for visualization.  
+Here is an example of how you can create a sample data file in ASCII format and visualize it using Tecplot:
+
+Sample Input File (data.txt):  
+```
+1 1 1  
+2 4 8  
+3 9 27  
+4 16 64  
+```
+
+Code:  
+1. Open Tecplot.
+2. Click on File -> Load Data Files.
+3. Select the data.txt file.
+4. Customize the plot as needed (e.g., select plot type, add titles, adjust axes).
+5. Click on Plot to visualize the data.

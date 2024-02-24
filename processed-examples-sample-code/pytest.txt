@@ -1,0 +1,15 @@
+Use Case: Unit testing in Python using Pytest
+Code details and examples:
+Sample test script (test_sample.py):
+```python
+def add(x, y):
+    return x + y
+
+def test_add():
+    assert add(1, 2) == 3
+    assert add(5, 5) == 10
+```
+To run the test script with Pytest:
+```bash
+pytest test_sample.py
+```

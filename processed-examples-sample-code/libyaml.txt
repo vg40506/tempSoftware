@@ -1,0 +1,53 @@
+Use Case: Use libyaml to parse YAML files.
+Code details and examples:
+```
+// Sample YAML file 'sample.yaml'
+// key: value
+// name: John Doe
+// age: 30
+
+// C code to parse YAML file using libyaml
+#include <yaml.h>
+#include <stdio.h>
+
+int main() {
+    FILE *file = fopen("sample.yaml", "r");
+    yaml_parser_t parser;
+    yaml_token_t token;
+
+    yaml_parser_initialize(&parser);
+    yaml_parser_set_input_file(&parser, file);
+
+    do {
+        yaml_parser_scan(&parser, &token);
+        switch(token.type) {
+            case YAML_SCALAR_TOKEN:
+                printf("Key: %s\n", token.data.scalar.value);
+                break;
+            case YAML_VALUE_TOKEN:
+                printf("Value: %s\n", token.data.scalar.value);
+                break;
+            default:
+                break;
+        }
+        if(token.type != YAML_STREAM_END_TOKEN)
+            yaml_token_delete(&token);
+
+    } while(token.type != YAML_STREAM_END_TOKEN);
+
+    yaml_token_delete(&token);
+    yaml_parser_delete(&parser);
+    fclose(file);
+
+    return 0;
+}
+```
+Command to compile:
+```
+gcc -o parse_yaml parse_yaml.c -lyaml
+```
+
+Command to run:
+```
+./parse_yaml
+```

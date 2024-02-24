@@ -1,0 +1,11 @@
+Use Case: Version control system for tracking changes in source code during software development.
+
+Code details and examples:
+```
+git clone https://github.com/example/example.git
+cd example
+# Make changes to files
+git add .
+git commit -m "Added new feature"
+git push
+```

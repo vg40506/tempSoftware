@@ -1,0 +1,51 @@
+Use Case: GLM (Generalized Linear Modeling)
+
+Code details and examples:
+GLM is a commonly used statistical method for fitting a variety of statistical models. It can be implemented in different programming languages such as R, Python, and SAS.
+
+Sample input file: 
+The input file for GLM typically includes a dataset with predictor variables and a response variable. For example, in a CSV format:
+```
+age,income,gender,insurance_claim
+45,60000,Male,Yes
+32,40000,Female,No
+...
+
+```
+
+Code snippet in R:
+```R
+# Load data
+data <- read.csv("data.csv")
+
+# Fit a generalized linear model
+model <- glm(insurance_claim ~ age + income + gender, data = data, family = binomial)
+
+# Print model summary
+summary(model)
+```
+
+Command to run for R:
+```R
+Rscript script.R
+```
+
+Code snippet in Python using statsmodels library:
+```python
+import pandas as pd
+import statsmodels.api as sm
+
+# Load data
+data = pd.read_csv("data.csv")
+
+# Fit a generalized linear model
+model = sm.GLM(data['insurance_claim'], sm.add_constant(data[['age', 'income', 'gender']]), family=sm.families.Binomial()).fit()
+
+# Print model summary
+print(model.summary())
+```
+
+Command to run for Python:
+```bash
+python script.py
+```

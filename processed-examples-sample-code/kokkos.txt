@@ -1,0 +1,24 @@
+Use Case: Kokkos is a programming model and library that provides C++ performance portability on HPC systems. It is used for writing portable, high-performance C++ applications that can run efficiently on various architectures.
+
+Code details and examples:
+```cpp
+#include <Kokkos_Core.hpp>
+
+int main() {
+    Kokkos::initialize();
+    
+    // Kokkos code here
+    
+    Kokkos::finalize();
+    
+    return 0;
+}
+```
+
+To compile and run a Kokkos code:
+```bash
+g++ -o my_program my_program.cpp -I/path/to/kokkos/include -L/path/to/kokkos/lib -lkokkoscore
+./my_program
+```
+
+Make sure to replace `/path/to/kokkos/include` and `/path/to/kokkos/lib` with the actual paths to the Kokkos headers and libraries.

@@ -1,0 +1,8 @@
+Use Case: Xfig is a drawing program used to create figures. 
+
+Code details and examples:
+Xfig accepts input files in its own ".fig" format. Users can create figures by drawing shapes, lines, and text within the Xfig interface.
+
+To run Xfig, users can simply type "xfig" in the terminal.
+
+Please note that Xfig may require X Windows System to be installed on your system in order to run.

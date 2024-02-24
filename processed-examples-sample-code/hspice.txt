@@ -1,0 +1,49 @@
+Use Case: Circuit simulation using HSPICE
+
+Code details and examples:
+```
+* Sample HSPICE input deck for a simple CMOS inverter circuit
+* CMOS inverter with 180nm technology
+* Supply voltage = 1.8V
+* Vin = 0.9V
+
+* Include technology file
+.include cmos180.lib
+
+* Circuit netlist
+M1 out in Vdd Vdd pmos W=1u L=0.18u
+M2 out in gnd gnd nmos W=1u L=0.18u
+
+Vdd Vdd 0 1.8
+Vin in 0 0.9
+
+.params t_rise = 1ps
+
+* Transient simulation for 10ns with a timestep of 0.1ps
+.TRAN 0.1ps 10ns
+
+* Output variables to be saved in the output file
+.control
+run
+print tran v(in) v(out)
+wrdata out_tr VDD VDD V(in) V(out)
+let delay = V(out) = 0.9/2 from=0 to=10ns
+wrdata delay_t out_tr.out_delay = delay
+let transition = v(out) [deltime(v(out)=0.9) - deltime(v(out)=0.9)/2] from=0 to=10ns
+wrdata ttran_t out_tr.out_ttran = transition
+let trise = v(out) [10% vdd] from=0 to=10ns
+wrdata tr_t out_tr.out_trise = trise
+let falltime = v(out) [10% V(OUT(0))] fill=interpl from=0 to=10ns
+wrdata FallT_LL_t out_tr.out_falltime = falltime
+let rise_slew = v(out) [90% vdd] from=0 to=20ns
+wrdata rise_slew_t out_tr.out_rise_slew = rise_slew
+let fall_slew = v(out) [10% vdd] from=0 to=20ns
+wrdata fall_slew_t out_tr.out_fall_slew = fall_slew
+.endc
+.end
+```
+
+Command to run HSPICE simulation:
+```
+hspice -i inverter_simulation.sp -o inverter_simulation.lis
+```

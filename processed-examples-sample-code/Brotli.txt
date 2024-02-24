@@ -1,0 +1,16 @@
+Use Case: Brotli compression tool for compressing and decompressing files.
+
+Code details and examples:
+Brotli is a generic-purpose lossless compression algorithm that compresses data using a combination of a modern variant of the LZ77 algorithm, Huffman coding, and 2nd order context modeling.
+
+To compress a file using Brotli, you can use the following command:
+```
+brotli -o compressed_file.br input_file
+```
+
+To decompress a Brotli compressed file, you can use the following command:
+```
+brotli -d compressed_file.br -o decompressed_file
+```
+
+It is important to note that Brotli is not optimized for compressing small files, as the compression ratio may not be as significant compared to larger files.

@@ -1,0 +1,35 @@
+Use Case: Use GCC for compiling C code
+Code details and examples:
+
+Input file (example.c):
+```c
+#include <stdio.h>
+
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}
+```
+
+Command to compile using GCC:
+```
+gcc example.c -o example
+```
+
+Command to run the compiled executable:
+```
+./example
+```
+
+Use Case: Use GROMACS for molecular dynamics simulations
+Code details and examples:
+
+Input file (input.gro):
+```plaintext
+Example GROMACS input file
+```
+
+Command to run GROMACS:
+```
+gmx mdrun -s input.tpr -c output.gro
+```

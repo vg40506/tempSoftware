@@ -1,23 +1,54 @@
-Use Case: libogg is a library for encoding and decoding Ogg format files.
-Code details and examples: 
-1. Encode a WAV file to Ogg format:
-Sample input file (input.wav):
-```
-Input file: input.wav
+Use Case: Ogg file format library for audio compression
+
+Code details and examples:
+libogg is a reference implementation of the Ogg bitstream format. It provides functions for creating, reading, and writing Ogg files.
+
+Below is an example of how you can use libogg to create an Ogg file:
+
+```c
+#include <stdio.h>
+#include <ogg/ogg.h>
+
+int main() {
+    // Create an Ogg file
+    FILE *outfile = fopen("output.ogg", "wb");
+
+    // Initialize Ogg structures
+    ogg_stream_state ogg_stream;
+    ogg_packet packet;
+    ogg_page page;
+
+    // Initialize Ogg stream
+    ogg_stream_init(&ogg_stream, 123); // Use any serial number here
+
+    // Write Ogg data
+    char data[] = "Hello, world!";
+    packet.packet = data;
+    packet.bytes = sizeof(data);
+    packet.b_o_s = 1;
+    packet.e_o_s = 0;
+    packet.granulepos = 0;
+    packet.packetno = 0;
+
+    ogg_stream_packetin(&ogg_stream, &packet);
+    ogg_stream_flush(&ogg_stream, &page);
+
+    // Write Ogg page to file
+    fwrite(page.header, 1, page.header_len, outfile);
+    fwrite(page.body, 1, page.body_len, outfile);
+
+    // Clean up
+    ogg_stream_clear(&ogg_stream);
+    fclose(outfile);
+
+    return 0;
+}
 ```
 
-Code snippet:
+To compile the code above with libogg, you can use the following command:
+
 ```bash
-oggenc input.wav -o output.ogg
+gcc example.c -o example -logg
 ```
 
-2. Decode an Ogg file to WAV format:
-Sample input file (input.ogg):
-```
-Input file: input.ogg
-```
-
-Code snippet:
-```bash
-oggdec input.ogg -o output.wav
-```
+This will generate an executable file named "example" that creates an Ogg file with the provided data.

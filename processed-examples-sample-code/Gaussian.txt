@@ -1,0 +1,24 @@
+Use Case: Quantum chemistry calculation
+Code details and examples: 
+Gaussian is a popular quantum chemistry software package used for electronic structure modeling. Below is an example of a sample input file for a simple Hartree-Fock calculation of water molecule using Gaussian:
+
+Sample Input File (water_hf.com):
+```
+#HF/6-31G** optimization
+
+Water HF optimization
+
+0 1
+O
+H 1 0.96
+H 1 0.96 2 104.5
+```
+
+To run the Gaussian calculation using the input file above, you would typically execute the command:
+```
+g16 < water_hf.com > water_hf.out
+```
+
+This command runs the Gaussian 16 executable with the input file `water_hf.com` and directs the output to the file `water_hf.out`.
+
+Please note that the actual input file format and options may vary depending on the specific type of calculation and level of theory you wish to use in Gaussian.

@@ -1,0 +1,35 @@
+Use Case: Achieve system call filtering by using libseccomp library.
+
+Code details and examples:
+Libseccomp library allows the filtering of system calls using BPF (Berkeley Packet Filter) rules to define which system calls are allowed or denied for a process. Below is an example of how to use libseccomp to create a simple filter that allows `write` system call only.
+
+```c
+#include <stdio.h>
+#include <seccomp.h>
+
+int main() {
+    scmp_filter_ctx ctx;
+    
+    ctx = seccomp_init(SCMP_ACT_KILL); // deny by default
+    seccomp_rule_add(ctx, SCMP_ACT_ALLOW, SCMP_SYS(write), 0); // allow write syscall
+    seccomp_load(ctx);
+
+    printf("Allowed write syscall.\n");
+    write(1, "Hello, world!\n", 13);
+    return 0;
+}
+```
+
+To compile the above code, you can use the following command:
+
+```bash
+gcc -o seccomp_example seccomp_example.c -lseccomp
+```
+
+And to run the executable:
+
+```bash
+./seccomp_example
+```
+
+This example will allow the `write` system call and deny all others. You can modify the rules based on your specific use case by adding more system calls to allow or deny.

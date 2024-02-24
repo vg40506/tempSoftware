@@ -1,0 +1,37 @@
+Use Case: Mapping reads to a reference genome using BWA software
+Code details and examples:
+BWA (Burrows-Wheeler Aligner) is a software package for mapping low-divergent sequences against a large reference genome. Here is an example of how to map reads to a reference genome using BWA:
+
+1. Index the reference genome:
+```bash
+bwa index reference_genome.fa
+```
+
+2. Map reads to the reference genome:
+```bash
+bwa mem reference_genome.fa reads_1.fastq reads_2.fastq > mapped_reads.sam
+```
+
+In this example, replace `reference_genome.fa` with the reference genome file in fasta format, `reads_1.fastq` and `reads_2.fastq` with paired-end reads in fastq format, and `mapped_reads.sam` with the output file containing the mapped reads in SAM format.
+
+3. Convert SAM to BAM format and sort:
+```bash
+samtools view -S -b mapped_reads.sam | samtools sort -o mapped_reads.bam -
+```
+
+The above command converts the SAM file to BAM format and sorts it.
+
+4. Index the sorted BAM file:
+```bash
+samtools index mapped_reads.bam
+```
+
+This indexes the sorted BAM file for quick retrieval of reads.
+
+5. Visualize the mapped reads (optional):
+You can use tools like IGV (Integrative Genomics Viewer) to visualize the mapped reads.
+
+Note: Before running the above commands, make sure you have BWA and SAMtools installed in your system.
+
+Command to run the example:
+Assuming BWA and SAMtools are installed, you can run the above commands directly in your terminal.

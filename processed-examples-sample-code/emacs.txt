@@ -1,0 +1,17 @@
+Use Case: Text editing, code development; 
+
+Code details and examples: 
+- To open a file in Emacs:  
+```
+emacs filename
+```
+
+- To save the file in Emacs:  
+```
+Ctrl + x, Ctrl + s
+```
+
+- To close Emacs:  
+```
+Ctrl + x, Ctrl + c
+```

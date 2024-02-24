@@ -1,0 +1,26 @@
+Use Case: Run a Java program with OpenJDK. 
+
+Code details and examples:
+```java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+```
+Save the above code in a file named `HelloWorld.java`.
+
+Compile the Java code using the `javac` command:
+```
+javac HelloWorld.java
+```
+
+Run the compiled program using the `java` command:
+```
+java HelloWorld
+```
+
+This will output:
+```
+Hello, World!
+```

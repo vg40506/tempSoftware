@@ -1,0 +1,35 @@
+Use Case: High Performance Computing Cluster (HPCC)
+HPCC is an open-source, parallel computing platform used for big data processing and analytics. It provides a scalable, fault-tolerant system for processing large volumes of data.
+
+Code details and examples:
+1. Running a simple ECL (Enterprise Control Language) program on HPCC cluster:
+
+```ecl
+// myprogram.ecl
+OUTPUT('Hello, HPCC world!');
+```
+
+To run the ECL program on HPCC cluster:
+```bash
+ecl myprogram.ecl
+```
+
+2. Submitting a job to HPCC cluster using ecl command line:
+
+```bash
+ecl run myprogram.ecl
+```
+
+3. Monitoring job status on HPCC cluster:
+
+```bash
+ecl status <job_id>
+```
+
+4. Checking cluster status:
+
+```bash
+eclagent query
+```
+
+Note: The above commands are general examples and may vary based on the specific configuration of the HPCC cluster.

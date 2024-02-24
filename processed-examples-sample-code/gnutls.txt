@@ -1,0 +1,53 @@
+Use Case: Secure communication with TLS/SSL encryption using GnuTLS library.
+
+Code details and examples:
+GnuTLS is a library that provides functions for secure communication over TLS/SSL protocols. Below is an example of how to use GnuTLS in a C program to establish a secure connection with a server:
+
+```c
+#include <stdio.h>
+#include <gnutls/gnutls.h>
+
+int main() {
+    gnutls_certificate_credentials_t credentials;
+    gnutls_session_t session;
+    int ret;
+
+    gnutls_global_init();
+
+    gnutls_certificate_allocate_credentials(&credentials);
+    gnutls_certificate_set_x509_key_file(credentials, "server.crt", "server.key", GNUTLS_X509_FMT_PEM);
+
+    gnutls_init(&session, GNUTLS_CLIENT);
+
+    gnutls_server_name_set(session, GNUTLS_NAME_DNS, "example.com");
+
+    ret = gnutls_handshake(session);
+    if (ret < 0) {
+        fprintf(stderr, "Handshake failed\n");
+        return 1;
+    }
+
+    printf("Connected successfully\n");
+
+    gnutls_bye(session, GNUTLS_SHUT_RDWR);
+
+    gnutls_deinit(session);
+    gnutls_certificate_free_credentials(credentials);
+
+    gnutls_global_deinit();
+
+    return 0;
+}
+```
+
+Make sure to have the server's certificate ("server.crt") and private key ("server.key") in the same directory as this program. This is a basic example and may require additional error handling and configuration for a real-world scenario.
+
+To compile the program, use the following command:
+```bash
+gcc -o tls_client tls_client.c -lgnutls
+```
+
+To run the compiled program:
+```bash
+./tls_client
+```

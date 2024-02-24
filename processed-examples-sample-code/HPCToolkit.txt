@@ -1,0 +1,12 @@
+Use Case: Performance analysis for HPC applications.
+
+Code details and examples:
+- Input files: HPCToolkit requires the binary executable of the application you want to analyze. It also needs profiling data files generated during the execution of the application.
+- Command to run: hpctoolkit <path_to_executable>
+
+Example:
+```
+hpctoolkit my_application
+```
+
+Note: HPCToolkit provides a suite of tools for performance analysis, including hpcrun for collecting performance data during the execution of the application, hpcstruct for analyzing the executable's structure, and hpclink for correlating source code with performance metrics.

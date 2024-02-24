@@ -1,0 +1,25 @@
+Use Case: Molecular dynamics simulation software.
+Code details and examples:
+```python
+import hoomd
+
+# Initialize the simulation
+hoomd.context.initialize()
+
+# Create a lattice of particles
+system = hoomd.init.create_lattice(unitcell=hoomd.lattice.sc(a=2.0), n=[10, 10, 10])
+
+# Define the potential and integrator
+nl = hoomd.md.nlist.cell()
+lj = hoomd.md.pair.lj(nlist=nl, r_cut=3.0)
+lj.pair_coeff.set('A', 'A', epsilon=1.0, sigma=1.0)
+hoomd.md.integrate.mode_standard(dt=0.005)
+hoomd.md.integrate.nve(group=hoomd.group.all())
+
+# Run the simulation
+hoomd.run(1000)
+```
+To run the code snippet provided, you would typically save it in a Python script file (e.g., `simulate.py`) and run it using the hoomd command:
+```
+hoomd.python myscript.py
+```

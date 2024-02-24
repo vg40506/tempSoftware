@@ -1,0 +1,26 @@
+Use Case: Compute complex error function and its related functions using libcerf
+
+Code details and examples:
+```c
+#include <stdio.h>
+#include <cerf.h>
+
+int main() {
+    double complex z = 1.5 + 0.5*I;
+    double complex w = cerf(z);
+    
+    printf("Error function of %.2f + %.2fi is %.6f + %.6fi\n", creal(z), cimag(z), creal(w), cimag(w));
+    
+    return 0;
+}
+```
+
+Command to compile code:
+```bash
+gcc example.c -lcerf -lm -o example
+```
+
+Command to run compiled code:
+```bash
+./example
+```

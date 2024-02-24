@@ -1,0 +1,34 @@
+Use Case: PyRosetta is a Python-based interface to the Rosetta molecular modeling suite, designed for protein structure prediction and design tasks.
+
+Code details and examples:
+```python
+# Sample code to perform protein structure prediction with PyRosetta
+from pyrosetta import init, pose_from_file
+from pyrosetta.teaching import PyJobDistributor
+
+# Initialize PyRosetta
+init()
+
+# Load a protein structure from a PDB file
+pose = pose_from_file("input.pdb")
+
+# Perform protein structure prediction using PyJobDistributor
+jd = PyJobDistributor("output", 10, "score")
+for decoy in range(1, 11):
+    new_pose = pose.clone()
+    # Your modeling or design task here
+    jd.output_decoy(new_pose)
+```
+
+Command to run the script:
+```
+python your_script.py
+```
+
+Sample input files:
+- input.pdb: Protein structure in PDB format
+
+Requirements:
+- PyRosetta library needs to be installed and properly configured
+
+Please note that PyRosetta is not freely available and requires a license for usage.
