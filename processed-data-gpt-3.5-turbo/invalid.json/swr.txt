@@ -1,1 +1,0 @@
-I'm sorry, but "swr" does not correspond to any known software, compiler, python library, computational software, conda package, bioinformatics tool, or HPC tool. If you have a different software or tool in mind, please provide its name so I can generate the JSON output for you.
