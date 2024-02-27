@@ -1,4 +1,4 @@
-I'm going to assume you are referring to the PCRE2 library for Perl-compatible regular expressions. 
+PCRE2 library for Perl-compatible regular expressions. 
 
 Use Case: Pattern matching with PCRE2
 Code details and examples:

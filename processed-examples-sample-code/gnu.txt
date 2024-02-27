@@ -1,4 +1,4 @@
-I'm assuming you're referring to the GNU Project, which is a free software movement that promotes the development of open-source software. Here are some examples of GNU software:
+GNU Project, which is a free software movement that promotes the development of open-source software. Here are some examples of GNU software:
 
 Use Case: Compiler Tools
 Code details and examples:
